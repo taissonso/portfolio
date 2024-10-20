@@ -6,8 +6,8 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
-    assetPrefix: isProd ? '/portfolio/' : '',
-    basePath: isProd ? '/portfolio/' : '',
+    assetPrefix: isProd ? '/portfolio' : '',
+    basePath: isProd ? '/portfolio' : '',
 };
 
 // Exporta a configuração usando sintaxe ES6
