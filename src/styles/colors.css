@@ -1,0 +1,10 @@
+@import "./colors.css";
+:root {
+    --button-secondary: theme(colors.neutral.800);
+    --button-primary: theme(colors.primary.DEFAULT);
+}
+
+.dark {
+    --button-secondary: theme(colors.neutral.100);
+    --button-primary: theme(colors.primary.dark);
+}
