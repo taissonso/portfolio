@@ -4,6 +4,7 @@ import Script from "next/script";
 import FontLoader from "@/components/FontLoader";
 import '../styles/globals.css';
 import '../styles/colors.css';
+import '../styles/fonts.css';
 
 // Detecção de ambiente para caminhos base
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
