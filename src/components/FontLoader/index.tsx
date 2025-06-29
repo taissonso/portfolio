@@ -3,12 +3,13 @@
 import React from 'react';
 
 export default function FontLoader() {
-    // Detecção simples de ambiente
-    const isProd = process.env.NODE_ENV === 'production';
-    const basePath = isProd ? '/portfolio' : '';
+  const isGitHubPages = typeof window !== 'undefined' &&
+    window.location.hostname.includes('github.io');
 
-    return (
-        <style jsx global>{`
+  const basePath = isGitHubPages ? '/portfolio' : '';
+
+  return (
+    <style jsx global>{`
       @font-face {
         font-family: "Manrope";
         src: url("${basePath}/fonts/Manrope/Manrope-Bold.woff2") format("woff2"),
@@ -80,5 +81,5 @@ export default function FontLoader() {
         font-family: var(--font-primary);
       }
     `}</style>
-    );
+  );
 }
