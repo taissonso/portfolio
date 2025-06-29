@@ -1,10 +1,16 @@
-@import "./colors.css";
-:root {
-    --button-secondary: theme(colors.neutral.800);
-    --button-primary: theme(colors.primary.DEFAULT);
+@theme {
+    --color-primary-dark: #212121;
+    --color-primary-light: #e5e5e5;
+
+    --color-gray-light: #cecece;
+    --color-offwhite: #f2f2f2;
+
+    --color-purplelogo: #6c63ff;
+    --color-orangelogo: #ff6b4a;
 }
 
-.dark {
-    --button-secondary: theme(colors.neutral.100);
-    --button-primary: theme(colors.primary.dark);
+@theme (dark) {
+    --color-dark: #212121;
+    --text: #e5e5e5;
+    --color-gray-dark: #3a3a3a;
 }

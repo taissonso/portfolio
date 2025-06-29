@@ -1,12 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./colors.css";
+@import "./fonts.css";
 
 body {
-    color: #212121;
-    background: #f1f1f1;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
 }
+
+body.dark {
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary-light);
+}
+
+.shadow-header-light {
+    box-shadow: 0 0 16px 0 rgb(0 0 0/14%);
+}
+
+.shadow-header-dark {
+    box-shadow: 0 0 18px 2px #3a3a3a80;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer utilities {
     .text-balance {
