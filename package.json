@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "deploy": "next build && node createEmptyFile.js && gh-pages -d out -t",
+    "deploy": "next build && node createEmptyFile.js && node fixCssPaths.js && gh-pages -d out -t --dotfiles",
     "start": "next start",
     "lint": "next lint",
     "preview": "node fixForLocalPreview.js && npx serve out -s -p 3000",
