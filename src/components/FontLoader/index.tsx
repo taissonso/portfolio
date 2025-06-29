@@ -1,12 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function FontLoader() {
-  const isGitHubPages = typeof window !== 'undefined' &&
-    window.location.hostname.includes('github.io');
+  const [basePath, setBasePath] = useState('');
 
-  const basePath = isGitHubPages ? '/portfolio' : '';
+  useEffect(() => {
+    // Detectar ambiente no cliente
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    setBasePath(isGitHubPages ? '/portfolio' : '');
+  }, []);
 
   return (
     <style jsx global>{`
