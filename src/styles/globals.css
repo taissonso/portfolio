@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./colors.css";
 @import "./fonts.css";
+@import "./animation.css";
 
 body {
     background-color: var(--color-primary-light);
@@ -26,30 +27,4 @@ body.dark {
     .text-balance {
         text-wrap: balance;
     }
-}
-
-@keyframes up-and-down {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-14px);
-    }
-}
-
-.up-and-down {
-    animation: up-and-down 0.8s infinite;
-}
-
-.delay-1 {
-    animation-delay: 0.1s;
-}
-
-.delay-2 {
-    animation-delay: 0.3s;
-}
-
-.delay-3 {
-    animation-delay: 0.5s;
 }
