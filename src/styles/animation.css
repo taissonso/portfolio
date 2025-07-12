@@ -1,16 +1,4 @@
-@keyframes bounce-custom {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-.animation-timing {
-    animation: bounce-custom 0.5s infinite;
-}
+@import "tailwindcss";
 
 @keyframes up-and-down {
     0%,
