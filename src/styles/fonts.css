@@ -2,6 +2,7 @@
 
 @theme {
     --font-manrope: "Manrope", sans-serif;
+    --font-machine: "Special Elite", system-ui;
 }
 
 @font-face {
