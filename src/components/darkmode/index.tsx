@@ -8,18 +8,31 @@ const DarkMode = () => {
     if (!mounted) return null;
 
     return (
-        <div className={`relative flex items-center justify-between h-[32px] w-16 cursor-pointer py-1 px-[6px] rounded-[64px]
-      ${theme === 'light' ? 'bg-gray-light' : 'bg-gray-dark'}`}
-            onClick={toggleTheme}>
-
-            <div className={`absolute w-6 h-6 rounded-[100%] transition-transform duration-300 ease-in-out z-30
-          ${theme === 'light' ? 'translate-x-[30px] bg-offwhite' : 'translate-x-[-2px] bg-dark'}`}>
+        <div
+            className={`relative flex items-center justify-center h-10 w-10 cursor-pointer rounded-full overflow-hidden
+                ${theme === 'light' ? 'bg-gray-light' : 'bg-gray-dark'}`}
+            onClick={toggleTheme}
+            title={theme === 'light' ? 'Mudar para tema escuro' : 'Mudar para tema claro'}
+        >
+            {/* Ícone da Lua - visível apenas no tema claro (para mudar para escuro) */}
+            <div
+                className={`absolute transition-all duration-700 ease-in-out
+                    ${theme === 'light'
+                        ? 'opacity-100 scale-100 translate-x-0 translate-y-0'
+                        : 'opacity-0 scale-50 translate-x-5 -translate-y-5'}`}
+            >
+                <MoonIcon width={20} height={20} className="text-dark" />
             </div>
-            <MoonIcon width={20} height={20}
-                className={`relative transition-all ease-out duration-300 ${theme === 'dark' ? 'text-offwhite' : 'text-gray-500'}`}
-            />
-            <SunIcon width={20} height={20} className="relative text-offwhite object-contain transition-all ease-out duration-300" />
 
+            {/* Ícone do Sol - visível apenas no tema escuro (para mudar para claro) */}
+            <div
+                className={`absolute transition-all duration-700 ease-in-out
+                    ${theme === 'dark'
+                        ? 'opacity-100 scale-100 translate-x-0 translate-y-0'
+                        : 'opacity-0 scale-50 translate-x-5 -translate-y-5'}`}
+            >
+                <SunIcon width={20} height={20} className="text-offwhite" />
+            </div>
         </div>
     );
 };

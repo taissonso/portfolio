@@ -1,5 +1,19 @@
+@import "tailwindcss";
+
 @theme {
     --font-manrope: "Manrope", sans-serif;
+    --font-machine: "Special Elite", system-ui;
+}
+
+@font-face {
+    font-family: "Special Elite";
+    src: url("/portfolio/fonts/SpecialElite/SpecialElite-Regular.woff2")
+            format("woff2"),
+        url("/portfolio/fonts/SpecialElite/SpecialElite-Regular.woff")
+            format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
