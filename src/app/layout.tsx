@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet" />
       </head>
-      <body className="bg-primary-dark font-manrope dark" suppressHydrationWarning>
+      <body className="bg-primary-dark dark transition-theme" suppressHydrationWarning>
         <ThemeProvider>
           <LoadingScreen />
           <Script

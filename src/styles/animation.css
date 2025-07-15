@@ -25,3 +25,49 @@
 .delay-3 {
     animation-delay: 0.5s;
 }
+
+.shadow-header-light {
+    box-shadow: 0 0 16px 0 rgb(0 0 0/14%);
+}
+
+.shadow-header-dark {
+    box-shadow: 0 0 18px 2px #3a3a3a80;
+}
+
+:root {
+    --theme-transition-duration: 0.7s;
+    --theme-transition-timing: ease-in-out;
+}
+
+.transition-theme,
+body,
+h1,
+a {
+    transition: color var(--theme-transition-duration) ease-in-out,
+        background-color var(--theme-transition-duration) ease-in-out,
+        border-color var(--theme-transition-duration) ease-in-out,
+        box-shadow var(--theme-transition-duration) ease-in-out,
+        opacity var(--theme-transition-duration) ease-in-out;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+@keyframes rotateCircle {
+    0% {
+        transform: rotate(0deg) translateX(40px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(40px) rotate(-360deg);
+    }
+}
+
+.slow-circle {
+    animation: rotateCircle 3s linear infinite;
+    transform-origin: center;
+}
