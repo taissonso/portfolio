@@ -3,4 +3,5 @@ export interface LogoProps {
     height?: number;
     className?: string;
     isMobile?: boolean;
+    theme?: "light" | "dark";
 }

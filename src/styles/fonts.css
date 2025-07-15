@@ -6,6 +6,17 @@
 }
 
 @font-face {
+    font-family: "Special Elite";
+    src: url("/portfolio/fonts/SpecialElite/SpecialElite-Regular.woff2")
+            format("woff2"),
+        url("/portfolio/fonts/SpecialElite/SpecialElite-Regular.woff")
+            format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: "Manrope";
     src: url("/portfolio/fonts/Manrope/Manrope-Bold.woff2") format("woff2"),
         url("/portfolio/fonts/Manrope/Manrope-Bold.woff") format("woff");
