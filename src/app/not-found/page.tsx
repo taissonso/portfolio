@@ -16,7 +16,7 @@ export default function NotFoundPage() {
                 <h1 className="font-machine text-[36px] leading-[48px] lg:text-[56px] lg:leading-[54px] text-center uppercase">Página não encontrada</h1>
                 <div className='w-full max-w-[360px] h-auto md:max-w-[360px] lg:max-w-[556px] lg:h-[400px]'>
                     <Image
-                        src="/images/lupa.png"
+                        src="/portfolio/images/lupa.png"
                         alt="Descrição da imagem"
                         width={600}
                         height={400}
