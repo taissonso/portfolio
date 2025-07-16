@@ -6,12 +6,8 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
-    assetPrefix: isProd ? '/portfolio' : '',
+    assetPrefix: isProd ? '/portfolio/' : '',
     basePath: isProd ? '/portfolio' : '',
     trailingSlash: true,
-    publicRuntimeConfig: {
-        basePath: isProd ? '/portfolio' : '',
-    },
 };
-
-export default nextConfig;
+export default nextConfig;   
