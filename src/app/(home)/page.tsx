@@ -16,7 +16,7 @@ const Home: FC = () => {
             <div className='flex flex-col items-center justify-center gap-8 p-6 '>
                 <Logo width={300} height={300} theme={theme} isMobile={false} />
 
-                <h1 className="font-manrope text-[36px] leading-[48px] lg:text-[48px] lg:leading-[54px] flex items-end">Em construção
+                <h1 className="font-machine text-[36px] leading-[48px] lg:text-[56px] lg:leading-[62px] flex items-end">Em construção
                 </h1>
             </div>
         </main>);

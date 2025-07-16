@@ -1,81 +1,105 @@
 @import "tailwindcss";
 
 @theme {
-    --font-manrope: "Manrope", sans-serif;
+    --font-lato: "Lato", sans-serif;
     --font-machine: "Special Elite", system-ui;
 }
 
 @font-face {
     font-family: "Special Elite";
-    src: url("/portfolio/fonts/SpecialElite/SpecialElite-Regular.woff2")
-            format("woff2"),
-        url("/portfolio/fonts/SpecialElite/SpecialElite-Regular.woff")
-            format("woff");
+    src: url("/fonts/SpecialElite/SpecialElite-Regular.woff2") format("woff2"),
+        url("/fonts/SpecialElite/SpecialElite-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Manrope";
-    src: url("/portfolio/fonts/Manrope/Manrope-Bold.woff2") format("woff2"),
-        url("/portfolio/fonts/Manrope/Manrope-Bold.woff") format("woff");
+    font-family: "Lato";
+    src: url("/fonts/Lato/Lato-Black.woff2") format("woff2"),
+        url("/fonts/Lato/Lato-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("/fonts/Lato/Lato-Bold.woff2") format("woff2"),
+        url("/fonts/Lato/Lato-Bold.woff") format("woff");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Manrope";
-    src: url("/portfolio/fonts/Manrope/Manrope-ExtraLight.woff2")
-            format("woff2"),
-        url("/portfolio/fonts/Manrope/Manrope-ExtraLight.woff") format("woff");
-    font-weight: 200;
-    font-style: normal;
+    font-family: "Lato";
+    src: url("/fonts/Lato/Lato-BlackItalic.woff2") format("woff2"),
+        url("/fonts/Lato/Lato-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Manrope";
-    src: url("/portfolio/fonts/Manrope/Manrope-ExtraBold.woff2") format("woff2"),
-        url("/portfolio/fonts/Manrope/Manrope-ExtraBold.woff") format("woff");
-    font-weight: 800; /* Corrigido: ExtraBold normalmente é 800, não bold */
-    font-style: normal;
+    font-family: "Lato";
+    src: url("/fonts/Lato/Lato-BoldItalic.woff2") format("woff2"),
+        url("/fonts/Lato/Lato-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Manrope";
-    src: url("/portfolio/fonts/Manrope/Manrope-Light.woff2") format("woff2"),
-        url("/portfolio/fonts/Manrope/Manrope-Light.woff") format("woff");
+    font-family: "Lato";
+    src: url("/fonts/Lato/Lato-Italic.woff2") format("woff2"),
+        url("/fonts/Lato/Lato-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("/fonts/Lato/Lato-Light.woff2") format("woff2"),
+        url("/fonts/Lato/Lato-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Manrope";
-    src: url("/portfolio/fonts/Manrope/Manrope-SemiBold.woff2") format("woff2"),
-        url("/portfolio/fonts/Manrope/Manrope-SemiBold.woff") format("woff");
-    font-weight: 600;
-    font-style: normal;
+    font-family: "Lato";
+    src: url("/fonts/Lato/Lato-LightItalic.woff2") format("woff2"),
+        url("/fonts/Lato/Lato-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Manrope";
-    src: url("/portfolio/fonts/Manrope/Manrope-Regular.woff2") format("woff2"),
-        url("/portfolio/fonts/Manrope/Manrope-Regular.woff") format("woff");
+    font-family: "Lato";
+    src: url("/fonts/Lato/Lato-Regular.woff2") format("woff2"),
+        url("/fonts/Lato/Lato-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Manrope";
-    src: url("/portfolio/fonts/Manrope/Manrope-Medium.woff2") format("woff2"),
-        url("/portfolio/fonts/Manrope/Manrope-Medium.woff") format("woff");
-    font-weight: 500;
+    font-family: "Lato Hairline";
+    src: url("/fonts/Lato/Lato-Hairline.woff2") format("woff2"),
+        url("/fonts/Lato/Lato-Hairline.woff") format("woff");
+    font-weight: 300;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lato Hairline";
+    src: url("/fonts/Lato/Lato-HairlineItalic.woff2") format("woff2"),
+        url("/fonts/Lato/Lato-HairlineItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
     font-display: swap;
 }

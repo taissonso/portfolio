@@ -41,6 +41,7 @@
 
 .transition-theme,
 body,
+div,
 h1,
 a {
     transition: color var(--theme-transition-duration) ease-in-out,

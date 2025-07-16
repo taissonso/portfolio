@@ -2,18 +2,17 @@
 import Link from 'next/link';
 import { ButtonsProps } from './types';
 
-export const Buttons = ({ href, icon, className, label, theme, ...props }: ButtonsProps) => {
+export const Buttons = ({ href, className, label, theme }: ButtonsProps) => {
     return (
         <Link
-            href="/"
-            className={`font-machine p-2 px-4 rounded-[3px] relative inline-block group transition-theme ${className}`}
-
+            href={href}
+            className={`group ${theme === 'dark' ? 'text-primary-dark bg-gray-light' : 'text-primary-dark bg-gray-dark'} font-lato text-[16px] leading-[24px] p-2 px-4 rounded-[3px] relative inline-block ${className}`}
         >
-            <div className={`relative inline-block tracking-[1px] text-[16px] leading-[24px] ${theme === 'dark' ? 'text-primary-light ' : 'text-primary-dark '}`} >
+            <span className="relative inline-block">
                 {label}
-                <span className="absolute h-[1px] w-0 bg-current left-1/2 bottom-[4px] group-hover:w-full transition-all duration-300 transform -translate-x-1/2"></span>
-            </div>
-        </Link >
+                <span className="absolute h-[1px] left-1/2 bottom-0 w-0 group-hover:w-full bg-current transition-all duration-300 transform -translate-x-1/2"></span>
+            </span>
+        </Link>
     );
 }
 

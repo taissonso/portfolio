@@ -1,7 +1,6 @@
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Metadata } from "next";
 import Script from "next/script";
-import FontLoader from "@/components/FontLoader";
 import Header from "@/components/header";
 
 import '../styles/globals.css';
@@ -33,13 +32,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <FontLoader />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat&display=swap" rel="stylesheet" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet" />
       </head>
       <body className="bg-primary-dark dark transition-theme" suppressHydrationWarning>
         <ThemeProvider>

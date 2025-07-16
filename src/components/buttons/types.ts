@@ -1,7 +1,7 @@
 import { SVGProps } from "react";
 
 export interface ButtonsProps {
-    href?: string;
+    href: string;
     onClick?: () => void;
     className?: string;
     children?: React.ReactNode;
