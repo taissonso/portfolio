@@ -10,5 +10,4 @@ const nextConfig = {
     basePath: isProd ? '/portfolio' : '',
     trailingSlash: true,
 };
-
-export default nextConfig;
+export default nextConfig;   
