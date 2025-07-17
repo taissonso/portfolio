@@ -17,8 +17,8 @@ const Header = () => {
     return (
         <header className={`fixed flex items-center justify-between w-full h-[80px] px-4 lg:px-16 border-b border-solid transition-theme
             ${theme === 'light'
-                ? 'bg-primary-light border-gray-light shadow-header-light'
-                : 'bg-primary-dark border-gray-dark shadow-header-dark'}`}
+                ? 'bg-light-primary border-light-gray shadow-header-light'
+                : 'bg-dark-primary border-dark-gray shadow-header-dark'}`}
         >
 
             <Link href="/" className={`w-auto h-auto cursor-pointer `}>

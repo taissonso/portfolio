@@ -1,47 +1,14 @@
 @import "tailwindcss";
 
-@keyframes up-and-down {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-14px);
-    }
-}
-
-.up-and-down {
-    animation: up-and-down 0.8s infinite;
-}
-
-.delay-1 {
-    animation-delay: 0.1s;
-}
-
-.delay-2 {
-    animation-delay: 0.3s;
-}
-
-.delay-3 {
-    animation-delay: 0.5s;
-}
-
-.shadow-header-light {
-    box-shadow: 0 0 16px 0 rgb(0 0 0/14%);
-}
-
-.shadow-header-dark {
-    box-shadow: 0 0 18px 2px #3a3a3a80;
-}
-
 :root {
-    --theme-transition-duration: 0.7s;
+    --theme-transition-duration: 0.5s;
     --theme-transition-timing: ease-in-out;
 }
 
 .transition-theme,
 body,
 h1,
+svg,
 a {
     transition: color var(--theme-transition-duration) ease-in-out,
         background-color var(--theme-transition-duration) ease-in-out,
@@ -49,8 +16,6 @@ a {
         box-shadow var(--theme-transition-duration) ease-in-out,
         opacity var(--theme-transition-duration) ease-in-out;
 }
-
-@custom-variant dark (&:where(.dark, .dark *));
 
 @layer utilities {
     .text-balance {

@@ -13,7 +13,7 @@ export const Logo = ({ width = 300, height = 300, className, isMobile, theme = '
             height={height}
             viewBox={`0 0 ${baseWidth} ${baseHeight}`}
             xmlns="http://www.w3.org/2000/svg"
-            className={`w-full h-full" ${className}`}
+            className={`w-full h-full transition-theme" ${className}`}
             preserveAspectRatio="xMidYMid meet"
         >
             <defs>

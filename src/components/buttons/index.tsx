@@ -6,7 +6,7 @@ export const Buttons = ({ href, className, label, theme }: ButtonsProps) => {
     return (
         <Link
             href={href}
-            className={`group ${theme === 'dark' ? 'text-primary-dark bg-gray-light' : 'text-primary-dark bg-gray-dark'} font-lato text-[16px] leading-[24px] p-2 px-4 rounded-[3px] relative inline-block ${className}`}
+            className={`group ${theme === 'dark' ? 'text-dark-primary bg-gray-light' : 'text-dark-primary bg-dark-graygray'} font-lato text-[16px] leading-[24px] p-2 px-4 rounded-[3px] relative inline-block ${className}`}
         >
             <span className="relative inline-block">
                 {label}
