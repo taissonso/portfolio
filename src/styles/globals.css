@@ -2,6 +2,15 @@
 @import "./colors.css";
 @import "./fonts.css";
 @import "./animation.css";
+@import "./typography.css";
+
+@theme {
+    --breakpoint-*: initial;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1440px;
+}
 
 * {
     box-sizing: border-box;
@@ -15,4 +24,13 @@ body {
 body.dark {
     background-color: var(--color-primary-dark);
     color: var(--color-primary-light);
+}
+
+.light {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    @variant dark {
+        background-color: var(--color-primary-dark);
+        color: var(--color-primary-light);
+    }
 }
