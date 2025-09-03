@@ -1,6 +1,6 @@
 import MoonIcon from "../Icons/Moon";
 import SunIcon from "../Icons/Sun";
-import { useTheme } from "../ThemeProvider";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const DarkMode = () => {
     const { theme, toggleTheme, mounted } = useTheme();
@@ -8,11 +8,7 @@ const DarkMode = () => {
     if (!mounted) return null;
 
     return (
-        <div
-            className={`relative flex items-center justify-center h-10 w-10 cursor-pointer rounded-full overflow-hidden group
-            ${theme === 'light'
-                    ? 'bg-light-gray hover:bg-dark-gray transition-colors duration-300'
-                    : 'bg-dark-gray hover:bg-light-gray transition-colors duration-300'}`}
+        <div className={`darkmode relative flex items-center justify-center h-10 w-10 cursor-pointer rounded-full overflow-hidden group transition-colors duration-300 `}
             onClick={toggleTheme}
             title={theme === 'light' ? 'Mudar para tema escuro' : 'Mudar para tema claro'}
         >

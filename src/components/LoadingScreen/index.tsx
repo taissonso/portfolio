@@ -21,7 +21,7 @@ export default function LoadingScreen() {
         const maxTimeout = setTimeout(() => {
             setOpacity(0);
             setTimeout(() => setLoading(false), 500);
-        }, 8000);
+        }, 5000);
 
         return () => {
             window.removeEventListener('load', handleLoad);
@@ -31,15 +31,22 @@ export default function LoadingScreen() {
 
     if (!loading) return null;
 
+
     return (
         <div
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center transition-all duration-500"
+            className="fixed inset-0 bg-dark-primary/80 z-50 flex items-center justify-center transition-theme"
             style={{ opacity }}
         >
-            <div className="flex items-center justify-center space-x-3">
-                <div className="w-3 h-3 bg-purplelogo rounded-full animation-timing delay-1"></div>
-                <div className="w-3 h-3 bg-offwhite rounded-full animation-timing delay-2"></div>
-                <div className="w-3 h-3 bg-orangelogo rounded-full animation-timing delay-3"></div>
+            <div className="overflow-hidden pacman-container flex items-center w-full max-w-[312px] h-14 relative">
+                <div className={`pacman w-14 h-14 relative rounded-full z-10 `}></div>
+
+                <div className="w-max h-14 dots flex items-center space-x-5 ml-2">
+                    <div className="w-2 h-2 bg-light-primary rounded-full dotpacman"></div>
+                    <div className="w-2 h-2 bg-light-primary rounded-full dotpacman"></div>
+                    <div className="w-2 h-2 bg-light-primary rounded-full dotpacman"></div>
+                    <div className="w-2 h-2 bg-light-primary rounded-full dotpacman"></div>
+                    <div className="w-2 h-2 bg-light-primary rounded-full dotpacman"></div>
+                </div>
             </div>
         </div>
     );

@@ -9,7 +9,8 @@
 body,
 h1,
 svg,
-a {
+a,
+.underline-links {
     transition: color var(--theme-transition-duration) ease-in-out,
         background-color var(--theme-transition-duration) ease-in-out,
         border-color var(--theme-transition-duration) ease-in-out,
@@ -17,22 +18,105 @@ a {
         opacity var(--theme-transition-duration) ease-in-out;
 }
 
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
+.pacman {
+    animation: move-pacman 30s ease-out infinite;
 }
 
-@keyframes rotateCircle {
+@keyframes move-pacman {
     0% {
-        transform: rotate(0deg) translateX(40px) rotate(0deg);
+        transform: translateX(0);
     }
     100% {
-        transform: rotate(360deg) translateX(40px) rotate(-360deg);
+        transform: translateX(calc(100vw - 150px));
     }
 }
 
-.slow-circle {
-    animation: rotateCircle 3s linear infinite;
-    transform-origin: center;
+.pacman::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 28px;
+    border-radius: 56px 56px 0 0;
+    background: #facc15;
+    transform-origin: bottom;
+    animation: chomp-top 0.4s ease-in-out infinite;
+}
+
+.pacman::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 56px;
+    height: 28px;
+    border-radius: 0 0 56px 56px;
+    background: #facc15;
+    transform-origin: top;
+    animation: chomp-bottom 0.4s ease-in-out infinite;
+}
+
+@keyframes chomp-top {
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes chomp-bottom {
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+}
+
+.dots-container {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-40%);
+}
+
+.dotpacman {
+    margin-right: 40px;
+    animation: dot-disappear 0.8s forwards;
+}
+
+.dotpacman:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.dotpacman:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.dotpacman:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.dotpacman:nth-child(4) {
+    animation-delay: 1.3s;
+}
+
+.dotpacman:nth-child(5) {
+    animation-delay: 1.7s;
+}
+
+@keyframes dot-disappear {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
 }

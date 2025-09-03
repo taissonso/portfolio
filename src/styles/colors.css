@@ -12,4 +12,21 @@
     --color-dark-primary: #212121;
     --color-dark-gray: #3a3a3a;
     --text: #e5e5e5;
+
+    --color-blue-primary: #1e88e5;
+    --color-blue-primary-hover: #64b5f6;
+}
+
+.darkmode {
+    background-color: var(--color-light-gray);
+    &:hover {
+        background-color: var(--color-dark-gray);
+    }
+
+    @variant dark {
+        background-color: var(--color-dark-gray);
+        &:hover {
+            background-color: var(--color-light-gray);
+        }
+    }
 }
