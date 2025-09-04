@@ -8,6 +8,7 @@ import NavLink from "./components/NavLinks";
 import { menuItems } from "./menuItems";
 import { useContext, useEffect, useRef, useState } from "react";
 import { HoverContext } from "@/contexts/NavHoverContext";
+import MobileMenu from "./components/MobileMenu";
 
 const Header = () => {
     const { theme, mounted } = useTheme();
@@ -82,6 +83,8 @@ const Header = () => {
                     </div>
                     <DarkMode />
                 </nav>
+
+                <MobileMenu />
             </div>
         </header>
     );

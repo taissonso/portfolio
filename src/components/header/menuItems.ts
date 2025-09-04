@@ -8,10 +8,10 @@ export const menuItems = {
             label: "Projetos",
             href: "/projetos",
         },
-        {
-            label: "Tipografia",
-            href: "/tipografia",
-        },
+        // {
+        //     label: "Tipografia",
+        //     href: "/tipografia",
+        // },
         {
             label: "Contato",
             href: "/contato",
