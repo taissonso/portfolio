@@ -3,6 +3,7 @@
 @import "./fonts.css";
 @import "./animation.css";
 @import "./typography.css";
+@import "./container.css";
 
 @theme {
     --breakpoint-*: initial;

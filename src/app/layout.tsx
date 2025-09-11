@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { Metadata } from "next";
 import Script from "next/script";
-import Header from "@/components/header";
+import Header from "@/components/Header";
 
 import '../styles/globals.css';
 import '../styles/colors.css';
@@ -54,7 +54,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <Providers>
-          {children}
+          <main>
+            {children}
+          </main>
         </Providers>
       </body>
     </html>

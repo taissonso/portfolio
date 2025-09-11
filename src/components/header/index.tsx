@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { useTheme } from "@/contexts/ThemeContext";
-import DarkMode from "../darkmode";
-import { Logo } from "../logo";
-import NavLink from "./components/NavLinks";
-import { menuItems } from "./menuItems";
+import DarkMode from "../DarkMode";
+import { Logo } from "../Logo";
+import { menuItems } from "./menu-items";
 import { useContext, useEffect, useRef, useState } from "react";
 import { HoverContext } from "@/contexts/NavHoverContext";
+import NavLink from "./components/NavLinks";
 import MobileMenu from "./components/MobileMenu";
 
 const Header = () => {
@@ -53,7 +53,7 @@ const Header = () => {
                 ? 'bg-light-primary border-light-gray shadow-header-light'
                 : 'bg-dark-primary border-dark-gray shadow-header-dark'}`}
         >
-            <div className="flex items-center justify-between w-full h-full ">
+            <div className="flex items-center justify-between w-full h-full max-w-[1440px] mx-auto">
                 <Link href="/" className={`w-[40px] h-[40px] cursor-pointer`} aria-label="Página inicial">
                     <Logo width={40} height={40} isMobile={true} theme={theme} />
                 </Link>
@@ -84,7 +84,7 @@ const Header = () => {
                     <DarkMode />
                 </nav>
 
-                <MobileMenu />
+                <MobileMenu theme={theme} />
             </div>
         </header>
     );

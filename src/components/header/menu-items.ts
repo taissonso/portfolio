@@ -5,20 +5,16 @@ export const menuItems = {
             href: "/",
         },
         {
+            label: "Currículo",
+            href: "/curriculo",
+        },
+        {
             label: "Projetos",
             href: "/projetos",
         },
-        // {
-        //     label: "Tipografia",
-        //     href: "/tipografia",
-        // },
         {
             label: "Contato",
-            href: "/contato",
-        },
-        {
-            label: "Currículo",
-            href: "/curriculo",
+            href: "/#contato",
         },
     ],
 };

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-export default function LoadingScreen() {
+const LoadingScreen = () => {
     const [loading, setLoading] = useState(true);
     const [opacity, setOpacity] = useState(1);
 
@@ -51,3 +51,5 @@ export default function LoadingScreen() {
         </div>
     );
 }
+
+export default LoadingScreen;
