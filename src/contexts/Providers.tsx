@@ -5,7 +5,7 @@ import { NavHoverProvider } from '@/contexts/NavHoverContext';
 import LoadingScreen from '@/components/loadingscreen';
 import Header from '@/components/header';
 
-export function Providers({ children }: { children: React.ReactNode }) {
+const Providers = ({ children }: { children: React.ReactNode }) => {
     return (
         <ThemeProvider>
             <LoadingScreen />
@@ -16,3 +16,5 @@ export function Providers({ children }: { children: React.ReactNode }) {
         </ThemeProvider>
     );
 }
+
+export default Providers;

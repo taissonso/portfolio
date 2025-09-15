@@ -4,7 +4,9 @@ import '../styles/globals.css';
 import '../styles/colors.css';
 import '../styles/fonts.css';
 import LoadingScreen from "@/components/loadingscreen";
-import { Providers } from "@/contexts/Providers";
+
+import Providers from "@/contexts/Providers";
+
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
 export const metadata: Metadata = {
