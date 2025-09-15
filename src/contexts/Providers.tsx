@@ -3,7 +3,7 @@
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { NavHoverProvider } from '@/contexts/NavHoverContext';
 import Header from '@/components/header';
-import LoadingScreen from '@/components/loadingscreen';
+import LoadingScreen from '../components/LoadingScreen';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
     return (
