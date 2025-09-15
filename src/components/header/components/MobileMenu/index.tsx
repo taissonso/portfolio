@@ -6,10 +6,11 @@ import NavLink from "../NavLinks";
 
 interface MobileMenuProps {
     theme: 'light' | 'dark';
+    isOpen?: boolean;
+    setIsOpen: (isOpen: boolean) => void;
 }
 
-const MobileMenu = ({ theme }: MobileMenuProps) => {
-    const [isOpen, setIsOpen] = useState(false);
+const MobileMenu = ({ theme, isOpen, setIsOpen }: MobileMenuProps) => {
     const navRef = useRef<HTMLUListElement>(null);
     const navItemsRef = useRef<Map<string, HTMLLIElement>>(new Map());
     const registerNavItem = (href: string, element: HTMLLIElement | null) => {
@@ -17,7 +18,6 @@ const MobileMenu = ({ theme }: MobileMenuProps) => {
             navItemsRef.current.set(href, element);
         }
     };
-
 
     return (
         <div className="flex lg:hidden">
@@ -102,8 +102,7 @@ const MobileMenu = ({ theme }: MobileMenuProps) => {
             </div>
 
             <nav
-                className={`
-                fixed top-[80px] left-0 right-0 bottom-0 w-full h-[calc(100vh-80px)] 
+                className={`absolute top-[80px] left-0 right-0 bottom-0 w-full h-[calc(100vh-80px)] z-50
                 ${theme === 'dark' ? 'bg-dark-primary' : 'bg-light-primary'} 
                 transition-all duration-300
                 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}
@@ -117,6 +116,7 @@ const MobileMenu = ({ theme }: MobileMenuProps) => {
                             label={item.label}
                             key={item.href}
                             innerRef={(el) => registerNavItem(item.href, el)}
+                            onClick={() => setIsOpen(false)}
                         />
                     ))}
                 </ul>

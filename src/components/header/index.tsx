@@ -16,6 +16,7 @@ const Header = () => {
     const [hoverBarStyle, setHoverBarStyle] = useState({ left: 0, width: 0, opacity: 0 });
     const navItemsRef = useRef<Map<string, HTMLLIElement>>(new Map());
     const navRef = useRef<HTMLUListElement>(null);
+    const [isOpenMenuMobile, setIsOpenMenuMobile] = useState(false);
 
     useEffect(() => {
         if (hovered && navItemsRef.current.has(hovered)) {
@@ -41,20 +42,25 @@ const Header = () => {
         }
     };
 
+    const closeMenuMobile = () => {
+        setIsOpenMenuMobile(false);
+    }
+
     if (!mounted) {
         return (
             <></>
         );
     }
 
+
     return (
-        <header className={`fixed flex items-center justify-between w-full h-[80px] px-4 lg:px-16 border-b border-solid transition-theme
+        <header className={`fixed flex items-center justify-between w-full h-[80px] border-b border-solid transition-theme z-10
             ${theme === 'light'
                 ? 'bg-light-primary border-light-gray shadow-header-light'
                 : 'bg-dark-primary border-dark-gray shadow-header-dark'}`}
         >
-            <div className="flex items-center justify-between w-full h-full max-w-[1440px] mx-auto">
-                <Link href="/" className={`w-[40px] h-[40px] cursor-pointer`} aria-label="Página inicial">
+            <div className="container flex items-center justify-between w-full h-full mx-auto">
+                <Link href="/" className={`w-[40px] h-[40px] cursor-pointer`} aria-label="Página inicial" onClick={closeMenuMobile}>
                     <Logo width={40} height={40} isMobile={true} theme={theme} />
                 </Link>
 
@@ -84,7 +90,7 @@ const Header = () => {
                     <DarkMode />
                 </nav>
 
-                <MobileMenu theme={theme} />
+                <MobileMenu theme={theme} setIsOpen={setIsOpenMenuMobile} isOpen={isOpenMenuMobile} />
             </div>
         </header>
     );
