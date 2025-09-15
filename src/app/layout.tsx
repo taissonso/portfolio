@@ -1,13 +1,9 @@
-import { ThemeProvider } from "@/contexts/ThemeContext";
 import { Metadata } from "next";
 import Script from "next/script";
-import Header from "@/components/Header";
-
 import '../styles/globals.css';
 import '../styles/colors.css';
 import '../styles/fonts.css';
 import LoadingScreen from "@/components/LoadingScreen";
-import { NavHoverProvider } from "@/contexts/NavHoverContext";
 import { Providers } from "@/contexts/Providers";
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 

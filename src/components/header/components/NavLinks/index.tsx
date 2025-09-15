@@ -7,7 +7,6 @@ import { HoverContext } from "@/contexts/NavHoverContext";
 const NavLink = ({
     href,
     label,
-    className,
     onClick,
     innerRef,
 }: NavLinkProps) => {
