@@ -1,4 +1,4 @@
-import DarkMode from "@/components/DarkMode";
+import DarkMode from "@/components/darkmode";
 import { useRef } from "react";
 import menuItems from "../../menu-items";
 import NavLink from "../NavLinks";

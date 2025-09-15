@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTheme } from "@/contexts/ThemeContext";
-import DarkMode from "../DarkMode";
+import DarkMode from "../darkmode";
 import Logo from "../logo";
 import { menuItems } from "./menu-items";
 import { useContext, useEffect, useRef, useState } from "react";

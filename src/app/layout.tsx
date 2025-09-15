@@ -3,7 +3,7 @@ import Script from "next/script";
 import '../styles/globals.css';
 import '../styles/colors.css';
 import '../styles/fonts.css';
-import LoadingScreen from "@/components/LoadingScreen";
+import LoadingScreen from "@/components/loadingscreen";
 import { Providers } from "@/contexts/Providers";
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
