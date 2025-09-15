@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { ButtonsProps } from './types';
 
-export const Buttons = ({ href, className, label, theme }: ButtonsProps) => {
+const Buttons = ({ href, className, label, theme }: ButtonsProps) => {
     return (
         <Link
             href={href}
@@ -16,3 +16,4 @@ export const Buttons = ({ href, className, label, theme }: ButtonsProps) => {
     );
 }
 
+export default Buttons;

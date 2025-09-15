@@ -1,6 +1,7 @@
 import { LogoProps } from "./types"
 
-export const Logo = ({ width = 300, height = 300, className, isMobile, theme = 'light' }: LogoProps & { theme?: 'light' | 'dark' }) => {
+
+const Logo = ({ width = 300, height = 300, className, isMobile, theme = 'light' }: LogoProps & { theme?: 'light' | 'dark' }) => {
     const baseWidth = 300;
     const baseHeight = 300;
 
@@ -98,3 +99,5 @@ export const Logo = ({ width = 300, height = 300, className, isMobile, theme = '
         </svg>
     )
 }
+
+export default Logo;

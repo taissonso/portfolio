@@ -12,7 +12,6 @@ const elementClasses: Record<Element, string> = {
     label: "text-label",
 };
 
-
 const Typography = ({
     tag,
     className,
