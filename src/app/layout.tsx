@@ -3,8 +3,8 @@ import Script from "next/script";
 import '../styles/globals.css';
 import '../styles/colors.css';
 import '../styles/fonts.css';
+import Providers from "@/contexts/providers";
 
-import Providers from "@/contexts/Providers";
 
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
