@@ -2,8 +2,8 @@
 'use client';
 
 import { FC } from 'react';
-import { Logo } from '@/components/Logo';
 import { useTheme } from '@/contexts/ThemeContext';
+import Logo from '@/components/Logo';
 import Typography from '@/components/Typography';
 const Home: FC = () => {
 

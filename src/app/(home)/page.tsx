@@ -2,9 +2,9 @@
 'use client';
 
 import { FC } from 'react';
-import { Logo } from '@/components/Logo';
 import { useTheme } from '@/contexts/ThemeContext';
 import Typography from '@/components/Typography';
+import Logo from '@/components/Logo';
 const Home: FC = () => {
 
     const { theme, mounted } = useTheme();
