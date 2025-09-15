@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useTheme } from "@/contexts/ThemeContext";
 import DarkMode from "../DarkMode";
-import Logo from "../Logo";
+import Logo from "../logo";
 import { menuItems } from "./menu-items";
 import { useContext, useEffect, useRef, useState } from "react";
 import { HoverContext } from "@/contexts/NavHoverContext";
