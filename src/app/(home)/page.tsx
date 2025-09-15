@@ -3,7 +3,7 @@
 
 import { FC } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
-import Typography from '@/components/Typography';
+import Typography from '../../components/typography';
 import Logo from '@/components/Logo';
 const Home: FC = () => {
 
