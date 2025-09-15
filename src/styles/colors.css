@@ -1,18 +1,67 @@
 @import "tailwindcss";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --color-primary-dark: #212121;
-    --color-primary-light: #e5e5e5;
-    --color-gray-light: #cecece;
+    /* light mode */
+    --color-light-primary: #e5e5e5;
+    --color-light-gray: #cecece;
     --color-offwhite: #f2f2f2;
 
-    --color-purplelogo: #6c63ff;
-    --color-orangelogo: #ff6b4a;
+    /* dark mode */
+    --color-dark-primary: #212121;
+    --color-dark-gray: #3a3a3a;
+    --text: #e5e5e5;
+
+    --color-blue-primary: #1e88e5;
+    --color-blue-primary-hover: #64b5f6;
 }
 
-@theme (dark) {
-    --color-dark: #212121;
-    --text: #e5e5e5;
-    --color-gray-dark: #3a3a3a;
+.darkmode {
+    background-color: var(--color-light-gray);
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color-dark-gray);
+        }
+    }
+
+    @variant dark {
+        background-color: var(--color-dark-gray);
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-light-gray);
+            }
+        }
+    }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+    background-color: var(--color-light-primary);
+    color: var(--color-dark-primary);
+}
+
+body.dark {
+    background-color: var(--color-dark-primary);
+    color: var(--color-light-primary);
+}
+
+.shadow-header-light {
+    box-shadow: 0 0 16px 0 rgb(0 0 0/14%);
+}
+
+.shadow-header-dark {
+    box-shadow: 0 0 18px 2px #3a3a3a80;
+}
+
+.light {
+    background-color: var(--color-light-primary);
+    color: var(--color-primary-dark);
+    @variant dark {
+        background-color: var(--color-primary-dark);
+        color: var(--color-light-primary);
+    }
 }

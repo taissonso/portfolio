@@ -1,12 +1,10 @@
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { Metadata } from "next";
 import Script from "next/script";
-import Header from "@/components/header";
-
 import '../styles/globals.css';
 import '../styles/colors.css';
 import '../styles/fonts.css';
 import LoadingScreen from "@/components/LoadingScreen";
+import { Providers } from "@/contexts/Providers";
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
 export const metadata: Metadata = {
@@ -33,28 +31,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </head>
-      <body className="dark transition-theme" suppressHydrationWarning>
-        <ThemeProvider>
-          <LoadingScreen />
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-B254J6KLR1"
-            strategy="afterInteractive"
-          />
-          <Script
-            id="google-analytics"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
+      <body className="dark bg-dark-primary transition-theme" suppressHydrationWarning>
+        <LoadingScreen />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-B254J6KLR1"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-B254J6KLR1');
             `,
-            }}
-          />
-          <Header />
-          {children}
-        </ThemeProvider>
+          }}
+        />
+        <Providers>
+          <main>
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );

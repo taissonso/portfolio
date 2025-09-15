@@ -4,6 +4,7 @@ export const Logo = ({ width = 300, height = 300, className, isMobile, theme = '
     const baseWidth = 300;
     const baseHeight = 300;
 
+
     const strokeColor = theme === 'light' ? "#212121" : "#ffffff";
     const currentColor = `grad-${theme}`;
 
@@ -13,8 +14,9 @@ export const Logo = ({ width = 300, height = 300, className, isMobile, theme = '
             height={height}
             viewBox={`0 0 ${baseWidth} ${baseHeight}`}
             xmlns="http://www.w3.org/2000/svg"
-            className={`w-full h-full" ${className}`}
+            className={`w-full h-full transition-theme" ${className}`}
             preserveAspectRatio="xMidYMid meet"
+            style={{ maxWidth: width, maxHeight: height }}
         >
             <defs>
                 <linearGradient id={currentColor} x1="0%" y1="0%" x2="100%" y2="0%">
@@ -31,8 +33,9 @@ export const Logo = ({ width = 300, height = 300, className, isMobile, theme = '
             <rect
                 filter="url(#roughEffect)"
                 x="4" y="4"
-                width="calc(100% - 8px)" height="calc(100% - 8px)"
-                rx={`${isMobile ? "26" : "24"}`} ry={`${isMobile ? "26" : "24"}`}
+                width={`${isMobile ? "calc(100% - 12px)" : "calc(100% - 8px)"}`}
+                height={`${isMobile ? "calc(100% - 8px)" : "calc(100% - 8px)"}`}
+                rx={`${isMobile ? 26 : 24}`} ry={`${isMobile ? 26 : 24}`}
                 fill="none"
                 stroke={`url(#${currentColor})`}
                 strokeWidth={isMobile ? "2" : "10"}

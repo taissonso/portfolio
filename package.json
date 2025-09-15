@@ -5,11 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "deploy": "next build && node createEmptyFile.js && node fixCssPaths.js && gh-pages -d out -t --dotfiles",
+    "deploy": "next build && gh-pages -d out -t --dotfiles",
     "start": "next start",
     "lint": "next lint",
     "preview": "node fixForLocalPreview.js && npx serve out -s -p 3000",
-    "preview-gh": "next build && node createEmptyFile.js && node fixForLocalPreview.js && npx serve out -s -p 3000"
+    "preview-gh": "next build && npx serve out -s -p 3000"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.11",
