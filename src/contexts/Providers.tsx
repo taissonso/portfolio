@@ -2,8 +2,8 @@
 
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { NavHoverProvider } from '@/contexts/NavHoverContext';
-import LoadingScreen from '@/components/loadingscreen';
 import Header from '@/components/header';
+import LoadingScreen from '@/components/loadingscreen';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
     return (
