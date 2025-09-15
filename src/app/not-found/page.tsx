@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useTheme } from '@/contexts/ThemeContext';
-import Buttons from '@/components/Buttons';
+import Buttons from '../../components/Buttons';
 
 
 
