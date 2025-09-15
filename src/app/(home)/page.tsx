@@ -4,7 +4,7 @@
 import { FC } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 import Typography from '../../components/typography';
-import Logo from '../../components/Logo';
+import Logo from '@/components/Logo';
 const Home: FC = () => {
 
     const { theme, mounted } = useTheme();
