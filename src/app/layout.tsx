@@ -1,12 +1,13 @@
 import { Metadata } from "next";
-import Script from "next/script";
 import '../styles/globals.css';
 import '../styles/colors.css';
 import '../styles/fonts.css';
 import Providers from "@/contexts/Providers";
+import GTMHead from "@/config/tracking/gtm-head";
+import GTMBody from "@/config/tracking/gtm-body";
 
 
-const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+const basePath = '/portfolio';
 
 export const metadata: Metadata = {
   title: "Taisson Oliveira - Desenvolvedor Web",
@@ -31,24 +32,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <GTMHead />
       </head>
       <body className="dark bg-dark-primary transition-theme" suppressHydrationWarning>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-B254J6KLR1"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-B254J6KLR1');
-            `,
-          }}
-        />
+        <GTMBody />
         <Providers>
           <main>
             {children}
