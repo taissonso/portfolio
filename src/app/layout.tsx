@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import '../styles/globals.css';
-import '../styles/colors.css';
-import '../styles/fonts.css';
 import Providers from "@/contexts/Providers";
 import GTMHead from "@/config/tracking/gtm-head";
 import GTMBody from "@/config/tracking/gtm-body";
+import './globals.css';
+import MouseChaser from "@/components/mousechaser";
+
 
 
 const basePath = '/portfolio';
@@ -31,12 +31,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+
+
+
         <GTMHead />
       </head>
       <body className="dark bg-dark-primary transition-theme" suppressHydrationWarning>
         <GTMBody />
         <Providers>
+        <MouseChaser />
           <main>
             {children}
           </main>
