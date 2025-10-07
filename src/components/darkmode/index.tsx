@@ -3,9 +3,7 @@ import SunIcon from "../Icons/Sun";
 import { useTheme } from "@/contexts/ThemeContext";
 
 const DarkMode = () => {
-    const { theme, toggleTheme, mounted } = useTheme();
-
-    if (!mounted) return null;
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <div className={`darkmode relative flex items-center justify-center h-10 w-10 cursor-pointer rounded-full overflow-hidden group transition-colors duration-300 `}

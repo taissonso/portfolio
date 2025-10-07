@@ -9,13 +9,12 @@ const MouseChaser = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 }); 
   const mousePosition = useRef({ x: 0, y: 0 }); 
   const animationFrameRef = useRef<number | null>(null); 
+  const [isActive, setIsActive] = useState(false); // State to activate after page load
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       mousePosition.current = { x: event.clientX, y: event.clientY };
     };
-
-    window.addEventListener("mousemove", handleMouseMove);
 
     const animate = () => {
       setPosition((prev) => {
@@ -31,13 +30,34 @@ const MouseChaser = () => {
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    animationFrameRef.current = requestAnimationFrame(animate);
+    if (isActive) {
+      window.addEventListener("mousemove", handleMouseMove);
+      animationFrameRef.current = requestAnimationFrame(animate);
+    }
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
     };
+  }, [isActive]);
+
+  useEffect(() => {
+    const handlePageLoad = () => {
+      setIsActive(true); // Activate after page load
+    };
+
+    if (document.readyState === "complete") {
+      handlePageLoad();
+    } else {
+      window.addEventListener("load", handlePageLoad);
+    }
+
+    return () => {
+      window.removeEventListener("load", handlePageLoad);
+    };
   }, []);
+
+  if (!isActive) return null; // Render nothing until active
 
   return (
     <div

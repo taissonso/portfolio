@@ -11,7 +11,7 @@ import NavLink from "./components/NavLinks";
 import MobileMenu from "./components/MobileMenu";
 
 const Header = () => {
-    const { theme, mounted } = useTheme();
+    const { theme } = useTheme();
     const { hovered } = useContext(HoverContext);
     const [hoverBarStyle, setHoverBarStyle] = useState({ left: 0, width: 0, opacity: 0 });
     const navItemsRef = useRef<Map<string, HTMLLIElement>>(new Map());
@@ -46,18 +46,11 @@ const Header = () => {
         setIsOpenMenuMobile(false);
     }
 
-    if (!mounted) {
-        return (
-            <></>
-        );
-    }
-
-
     return (
         <header className={`fixed flex items-center justify-between w-full h-[80px] border-b border-solid transition-theme z-10
             ${theme === 'light'
-                ? 'bg-light-primary border-light-gray shadow-header-light'
-                : 'bg-dark-primary border-dark-gray shadow-header-dark'}`}
+                ? 'border-light-gray shadow-header-light'
+                : 'border-dark-gray shadow-header-dark'}`}
         >
             <div className="container flex items-center justify-between w-full h-full mx-auto">
                 <Link href="/" className={`w-[40px] h-[40px] cursor-pointer`} aria-label="Página inicial" onClick={closeMenuMobile}>
