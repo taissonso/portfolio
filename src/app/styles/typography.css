@@ -48,6 +48,9 @@
     --text-p: 1rem;
     --text-p--line-weight: 1.5rem;
 
+    --text-p-medium: 1.125rem;
+    --text-p-medium--line-height: 1.75rem;
+
     --text-label: 0.75rem;
     --text-label--line-height: 1.25rem;
 }
