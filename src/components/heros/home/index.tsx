@@ -34,9 +34,8 @@ const HeroHome = () => {
                     <Logo width={350} height={350} theme={theme} isMobile={false} className="object-contain" />
                 </div>
                 <Typography
-                    tag="h1"
-                    className="relative h-auto text-balance word-break w-full 2xl:w-[60vw] text-center lg:text-left
-                        !text-[40px]/[42px] md:!text-[3.5rem]/[4rem] lg:!text-[4rem]/[4.5rem] xl:!text-[4.5rem]/[5rem]"
+                    variant="h1" titleFontSize="h1-mobile"
+                    className="relative h-auto text-balance word-break w-full 2xl:w-[60vw] text-center lg:text-left"
                 >
                     <span className="title-home relative small-device-text w-full">
                         {displayedText}

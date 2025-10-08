@@ -14,7 +14,7 @@ const Footer = () => {
                        </div>
                     </div>
                     <div className="col-span-3 w-full">
-                        <Typography tag="h4" variant="medium" className="text-footer-text">— Páginas —</Typography>
+                        <Typography variant="h4" titleFontSize="p-medium" className="text-footer-text">— Páginas —</Typography>
                         <LinksFooter />
                     </div>
                     <div className="col-span-4 bg-blue-100 w-full">Redes</div>
@@ -23,7 +23,7 @@ const Footer = () => {
                 <div className="w-full py-6 flex justify-center gap-2">
                     <div className="flex items-center justify-center gap-2">
                         <LaptopIcon className="w-6 h-6 text-footer-text" />
-                        <Typography tag="p" className="font-lato !text-footer-text">— Todos os códigos liberados</Typography>
+                        <Typography variant="p" className="font-lato !text-footer-text">— Todos os códigos liberados</Typography>
                     </div>
                 </div>
             </div>
