@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 import Logo from '@/components/logo';
 import Typography from '@/components/typography';
-const Home: FC = () => {
+const Projetos: FC = () => {
 
     const { theme } = useTheme();
 
@@ -13,9 +13,9 @@ const Home: FC = () => {
         <section className="h-[100vh] flex flex-col gap-6 items-center justify-center w-full ">
             <div className='flex flex-col items-center justify-center gap-8 p-6 '>
                 <Logo width={300} height={300} theme={theme} isMobile={false} />
-                <Typography tag="h1">Em construção</Typography>
+                <Typography variant="h1">Em breve</Typography>
             </div>
         </section>);
 };
 
-export default Home;
+export default Projetos;

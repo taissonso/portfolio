@@ -43,8 +43,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>
             {children}
           </main>
+          <Footer />
         </Providers>
-        <Footer />
       </body>
     </html>
   );

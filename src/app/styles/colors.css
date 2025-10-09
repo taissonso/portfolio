@@ -21,8 +21,36 @@
     --color-skeleton-highlight: #6b6b54;
 
     /* footer */
-    --color-blue-footer-end: #243746;
-    --color-footer-text: #CFE8F7;
+    --color-blue-footer-bg: #243746;
+    --color-footer-text: #B8E4F2;
+    --color-footer-title: #5CC9F5;
+
+    /* Social Icons */
+    --color-linkedin: #0a66c2;
+    --color-github: #3C3C3C;
+}
+
+.linkedin{
+    background-color: var(--color-linkedin);
+}
+
+.github {
+    background-color: var(--color-github);
+}
+
+.instagram {
+    background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285AEB 90%
+    );
+}
+
+.x {
+    background-color: #3C3C3C;
 }
 
 .darkmode {

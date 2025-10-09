@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 import Logo from '@/components/logo';
 import Typography from '@/components/typography';
-const Curriculo: FC = () => {
+const Privacidade: FC = () => {
 
     const { theme } = useTheme();
 
@@ -19,4 +19,4 @@ const Curriculo: FC = () => {
     );
 };
 
-export default Curriculo;
+export default Privacidade;

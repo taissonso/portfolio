@@ -7,11 +7,10 @@ const Typography = ({
     variant = "p",
     titleFontSize,
 }: TypographyProps): JSX.Element => {
+
     const TagHTML: React.ElementType = variant;
-
-    console.log(TagHTML);
-
     const elementClasses =  titleFontSize ? fontSizeMap[titleFontSize] : defaultFontSize[variant];
+    
     return (
         <TagHTML className={`${elementClasses} ${className}`}>
             {children}

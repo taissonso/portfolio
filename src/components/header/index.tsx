@@ -49,8 +49,8 @@ const Header = () => {
     return (
         <header className={`fixed flex items-center justify-between w-full h-[80px] border-b border-solid transition-theme z-10
             ${theme === 'light'
-                ? 'border-light-gray shadow-header-light'
-                : 'border-dark-gray shadow-header-dark'}`}
+                ? 'bg-light-primary border-light-gray shadow-header-light'
+                : 'bg-dark-primary border-dark-gray shadow-header-dark'}`}
         >
             <div className="container flex items-center justify-between w-full h-full mx-auto">
                 <Link href="/" className={`w-[40px] h-[40px] cursor-pointer`} aria-label="Página inicial" onClick={closeMenuMobile}>
