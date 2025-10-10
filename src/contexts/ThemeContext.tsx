@@ -1,80 +1,65 @@
 'use client';
 
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
+import SkeletonHeroHome from '@/components/skeleton/SkeletonHeroHome';
 
 type ThemeContextType = {
     theme: 'light' | 'dark';
     toggleTheme: () => void;
-    mounted: boolean;
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState<'light' | 'dark'>('dark');
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-
+    
+    const getInitialTheme = (): 'light' | 'dark' => {
+        if (typeof window === 'undefined') return 'dark';
         const savedTheme = localStorage.getItem('themePort');
         if (savedTheme === 'light' || savedTheme === 'dark') {
-            setTheme(savedTheme);
-        } else {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const systemTheme = prefersDark ? 'dark' : 'light';
-
-            setTheme(systemTheme);
-            localStorage.setItem('themePort', systemTheme);
+            return savedTheme;
         }
-    }, []);
-
-    useEffect(() => {
-        if (!mounted) return;
-
-        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-        const handleChange = (e: MediaQueryListEvent) => {
-            const savedTheme = localStorage.getItem('themePort');
-            const isAutoTheme = !savedTheme || savedTheme === 'auto';
-
-            if (isAutoTheme) {
-                const newTheme = e.matches ? 'dark' : 'light';
-                setTheme(newTheme);
-                localStorage.setItem('themePort', 'auto');
-            }
-        };
-
-        mediaQuery.addEventListener('change', handleChange);
-        return () => mediaQuery.removeEventListener('change', handleChange);
-    }, [mounted]);
-
-    useEffect(() => {
-        if (mounted) {
-            document.body.classList.remove('light', 'dark');
-            document.documentElement.classList.remove('light', 'dark');
-
-            document.body.classList.add(theme);
-            document.documentElement.classList.add(theme);
-
-            if (localStorage.getItem('themePort') !== 'auto') {
-                localStorage.setItem('themePort', theme);
-            }
-        }
-    }, [theme, mounted]);
-
-    const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-        localStorage.setItem('themePort', newTheme);
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        return prefersDark ? 'dark' : 'light';
     };
 
+    const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        if(isLoading) {
+            document.body.classList.remove(theme === 'light' ? 'dark' : 'light');
+            document.body.classList.add(theme);
+            localStorage.setItem('themePort', theme);
+            setIsLoading(false);
+       }
+    }, [theme, isLoading]);
+
+    const toggleTheme = () => {
+        setTheme((prevTheme) => {
+            const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+
+            document.body.classList.remove(newTheme === 'light' ? 'dark' : 'light');
+            document.body.classList.add(newTheme);
+            localStorage.setItem('themePort', newTheme);
+
+            return newTheme;
+        });
+    };
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false); 
+        }, 30000);
+
+        return () => clearTimeout(timer); 
+    }, []);
+
+    if (isLoading) {
+        return <SkeletonHeroHome />;
+    }
+
     return (
-        <ThemeContext.Provider value={{
-            theme,
-            toggleTheme,
-            mounted
-        }}>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
             {children}
         </ThemeContext.Provider>
     );

@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 import Logo from '@/components/logo';
 import Typography from '@/components/typography';
-const Projetos: FC = () => {
+const Privacidade: FC = () => {
 
     const { theme } = useTheme();
 
@@ -15,7 +15,8 @@ const Projetos: FC = () => {
                 <Logo width={300} height={300} theme={theme} isMobile={false} />
                 <Typography variant="h1" titleFontSize='h1-mobile'>Em breve</Typography>
             </div>
-        </section>);
+        </section>
+    );
 };
 
-export default Projetos;
+export default Privacidade;

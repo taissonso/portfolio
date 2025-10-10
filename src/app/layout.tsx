@@ -1,17 +1,18 @@
 import { Metadata } from "next";
-import '../styles/globals.css';
-import '../styles/colors.css';
-import '../styles/fonts.css';
 import Providers from "@/contexts/Providers";
 import GTMHead from "@/config/tracking/gtm-head";
 import GTMBody from "@/config/tracking/gtm-body";
+import Footer from "@/components/footer";
+import './globals.css';
+
+
 
 
 const basePath = '/portfolio';
 
 export const metadata: Metadata = {
-  title: "Taisson Oliveira - Desenvolvedor Web",
-  description: "Criando meu portfólio | WebDeveloper | FrontEnd",
+  title: "Taisson Oliveira - Desenvolvedor Front-end",
+  description: "Web Developer | FrontEnd | Desenvolvedor Front-end | Front-end Developer | React | Next.js | JavaScript | TypeScript | HTML | CSS | UI/UX",
   alternates: {
     canonical: "https://taissonso.github.io/portfolio/",
   },
@@ -31,15 +32,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
         <GTMHead />
       </head>
-      <body className="dark bg-dark-primary transition-theme" suppressHydrationWarning>
+      <body className="transition-theme" suppressHydrationWarning>
         <GTMBody />
         <Providers>
+        {/* <MouseChaser /> */}
           <main>
             {children}
           </main>
+          <Footer />
         </Providers>
       </body>
     </html>

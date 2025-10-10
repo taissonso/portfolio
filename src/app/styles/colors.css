@@ -1,0 +1,108 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* light mode */
+    --color-light-primary: #f0f0e8;
+    --color-light-gray: #cecece;
+    --color-offwhite: #f2f2f2;
+
+    /* dark mode */
+    --color-dark-primary: #121a25;
+    --color-dark-gray: #3a3a3a;
+    --text: #e5e5e5;
+
+
+    --color-blue-primary: #42a5f5;
+    --color-blue-primary-hover: #64b5f6;
+
+
+    --color-skeleton: #98987c;
+    --color-skeleton-component: #c2c2a6;
+    --color-skeleton-highlight: #6b6b54;
+
+    /* footer */
+    --color-blue-footer-bg: #243746;
+    --color-footer-text: #B8E4F2;
+    --color-footer-title: #5CC9F5;
+
+    /* Social Icons */
+    --color-linkedin: #0a66c2;
+    --color-github: #3C3C3C;
+}
+
+.linkedin{
+    background-color: var(--color-linkedin);
+}
+
+.github {
+    background-color: var(--color-github);
+}
+
+.instagram {
+    background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285AEB 90%
+    );
+}
+
+.x {
+    background-color: #3C3C3C;
+}
+
+.darkmode {
+    background-color: var(--color-light-gray);
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color-dark-gray);
+        }
+    }
+
+    @variant dark {
+        background-color: var(--color-dark-gray);
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-light-gray);
+            }
+        }
+    }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+    background-color: var(--color-light-primary);
+    color: var(--color-dark-primary);
+}
+
+body.dark {
+    background-color: var(--color-dark-primary);
+    color: var(--color-light-primary);
+}
+
+.shadow-header-light {
+    box-shadow: 0 0 16px 0 rgb(0 0 0/14%);
+}
+
+.shadow-header-dark {
+    box-shadow: 0 0 18px 2px #3a3a3a80;
+}
+
+.shadow-skeleton {
+    box-shadow: inherit;
+    box-shadow: 0 0 18px 2px var(--color-skeleton);
+}
+
+.light {
+    background-color: var(--color-light-primary);
+    color: var(--color-primary-dark);
+    @variant dark {
+        background-color: var(--color-primary-dark);
+        color: var(--color-light-primary);
+    }
+}

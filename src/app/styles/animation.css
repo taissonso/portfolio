@@ -1,0 +1,37 @@
+:root {
+    --theme-transition-duration: 0.5s;
+    --theme-transition-timing: ease-in-out;
+}
+
+.transition-theme,
+body,
+h1,
+svg,
+a,
+.underline-links {
+    transition: color var(--theme-transition-duration) ease-in-out,
+        background-color var(--theme-transition-duration) ease-in-out,
+        border-color var(--theme-transition-duration) ease-in-out,
+        box-shadow var(--theme-transition-duration) ease-in-out,
+        opacity var(--theme-transition-duration) ease-in-out;
+}
+
+.blinking-cursor {
+    display: inline-block;
+    width: 0px;
+    height: 0;
+    background-color: currentColor;
+    animation: blink 0.7s steps(2, start) infinite;
+    border: none;
+    position: relative;
+    left: 20px;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

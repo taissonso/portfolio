@@ -7,9 +7,7 @@ import Buttons from '../../components/buttons';
 
 
 export default function NotFoundPage() {
-    const { theme, mounted } = useTheme();
-
-    if (!mounted) return <div className="h-screen"></div>;
+    const { theme } = useTheme();
 
     return (
         <section className="h-[calc(100vh+80px)] flex flex-col gap-6 items-center justify-center w-full overflow-hidden relative">
