@@ -57,7 +57,7 @@ const Header = () => {
                     <Logo width={40} height={40} isMobile={true} theme={theme} />
                 </Link>
 
-                <nav className="hidden lg:flex items-center justify-between w-full ml-12" aria-label="Menu principal">
+                <nav className="hidden lg:flex items-center justify-between w-full ml-6 lg:ml-12" aria-label="Menu principal">
                     <div className="relative">
                         <ul ref={navRef} className="flex items-center gap-4">
                             {menuItems.mainMenu.map((item) => (

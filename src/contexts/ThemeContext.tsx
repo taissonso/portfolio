@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useState, useContext, useEffect, use } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import SkeletonHeroHome from '@/components/skeleton/SkeletonHeroHome';
 
 type ThemeContextType = {
@@ -32,7 +32,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
             localStorage.setItem('themePort', theme);
             setIsLoading(false);
        }
-    }, [theme]);
+    }, [theme, isLoading]);
 
     const toggleTheme = () => {
         setTheme((prevTheme) => {
@@ -46,13 +46,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         });
     };
 
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         setIsLoading(false); 
-    //     }, 30000);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false); 
+        }, 30000);
 
-    //     return () => clearTimeout(timer); 
-    // }, []);
+        return () => clearTimeout(timer); 
+    }, []);
 
     if (isLoading) {
         return <SkeletonHeroHome />;

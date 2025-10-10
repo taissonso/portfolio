@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Providers from "@/contexts/Providers";
 import GTMHead from "@/config/tracking/gtm-head";
 import GTMBody from "@/config/tracking/gtm-body";
-import MouseChaser from "@/components/mousechaser";
 import Footer from "@/components/footer";
 import './globals.css';
 

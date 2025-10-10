@@ -1,5 +1,5 @@
 import React from "react";
-import { defaultFontSize, Element, fontSizeMap, TypographyProps } from "./types";
+import { defaultFontSize, fontSizeMap, TypographyProps } from "./types";
 
 const Typography = ({
     className = "",

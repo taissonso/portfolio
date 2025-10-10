@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
 .mouse-circle {
     position: fixed;
     width: 20px;
