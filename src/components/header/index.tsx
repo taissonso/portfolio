@@ -47,7 +47,7 @@ const Header = () => {
     }
 
     return (
-        <header className={`fixed flex items-center justify-between w-full h-[80px] border-b border-solid transition-theme z-10
+        <header className={`fixed flex items-center justify-between w-full h-[80px] border-b border-solid transition-theme z-50
             ${theme === 'light'
                 ? 'bg-light-primary border-light-gray shadow-header-light'
                 : 'bg-dark-primary border-dark-gray shadow-header-dark'}`}
@@ -71,7 +71,7 @@ const Header = () => {
                         </ul>
 
                         <div
-                            className="absolute bottom-0 h-[2px] bg-blue-primary rounded-full transition-all duration-300 ease-out"
+                            className={`absolute bottom-0 h-[2px] rounded-full transition-all duration-300 ease-out ${theme === 'light' ? 'bg-blue-primary' : 'bg-footer-title'}`}
                             style={{
                                 left: `${hoverBarStyle.left}px`,
                                 width: `${hoverBarStyle.width}px`,
