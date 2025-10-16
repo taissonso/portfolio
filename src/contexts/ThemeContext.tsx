@@ -11,7 +11,7 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    
+
     const getInitialTheme = (): 'light' | 'dark' => {
         if (typeof window === 'undefined') return 'dark';
         const savedTheme = localStorage.getItem('themePort');
@@ -26,12 +26,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if(isLoading) {
+        if (isLoading) {
             document.body.classList.remove(theme === 'light' ? 'dark' : 'light');
             document.body.classList.add(theme);
             localStorage.setItem('themePort', theme);
             setIsLoading(false);
-       }
+        }
     }, [theme, isLoading]);
 
     const toggleTheme = () => {
@@ -48,10 +48,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setIsLoading(false); 
+            setIsLoading(false);
         }, 30000);
 
-        return () => clearTimeout(timer); 
+        return () => clearTimeout(timer);
     }, []);
 
     if (isLoading) {

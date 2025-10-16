@@ -1,10 +1,9 @@
+import './globals.css';
 import { Metadata } from "next";
 import Providers from "@/contexts/Providers";
+import Footer from "@/components/footer";
 import GTMHead from "@/config/tracking/gtm-head";
 import GTMBody from "@/config/tracking/gtm-body";
-import Footer from "@/components/footer";
-import './globals.css';
-
 
 
 
@@ -30,16 +29,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
         <GTMHead />
       </head>
       <body className="transition-theme" suppressHydrationWarning>
         <GTMBody />
         <Providers>
-        {/* <MouseChaser /> */}
-          <main>
+          <main >
             {children}
           </main>
           <Footer />

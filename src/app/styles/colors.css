@@ -12,8 +12,8 @@
     --text: #e5e5e5;
 
 
-    --color-blue-primary: #42a5f5;
-    --color-blue-primary-hover: #64b5f6;
+    --color-blue-primary: #0056B3;
+    --color-blue-gray-dark: #5a6d7a;
 
 
     --color-skeleton: #98987c;
@@ -22,12 +22,12 @@
 
     /* footer */
     --color-blue-footer-bg: #243746;
-    --color-footer-text: #B8E4F2;
-    --color-footer-title: #5CC9F5;
+    --color-footer-text: #b8e4f2;
+    --color-footer-title: #5cc9f5;
 
     /* Social Icons */
     --color-linkedin: #0a66c2;
-    --color-github: #3C3C3C;
+    --color-github: #3c3c3c;
 }
 
 .linkedin{
@@ -50,7 +50,7 @@
 }
 
 .x {
-    background-color: #3C3C3C;
+    background-color: #3c3c3c;
 }
 
 .darkmode {

@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import { useContext } from "react";
 import { NavLinkProps } from "../../types";
 import { HoverContext } from "@/contexts/NavHoverContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const NavLink = ({
     href,
@@ -11,6 +12,7 @@ const NavLink = ({
     innerRef,
 }: NavLinkProps) => {
     const pathname = usePathname();
+    const { theme } = useTheme();
     const { hovered, setHovered } = useContext(HoverContext);
 
     const basePath = pathname.includes("/portfolio") ? "/portfolio" : "";
@@ -34,7 +36,7 @@ const NavLink = ({
                     transition-all duration-300 
                     group ${isDimmed ? "opacity-30" : "opacity-100"}
                     ${!hovered && isActive
-                        ? "text-blue-primary"
+                        ? `${theme === 'light' ? 'text-blue-primary' : 'text-footer-title'}`
                         : "text-dark-gray dark:text-light-primary"
                     }
                 `}
@@ -53,7 +55,9 @@ const NavLink = ({
                     className={`absolute inset-0 flex items-center justify-center 
                         font-machine text-blue-primary 
                         transition-opacity duration-300 
-                        ${isHovered ? "opacity-100 " : "opacity-0 "}`
+                        ${isHovered ? "opacity-100 " : "opacity-0 "}
+                        ${theme === 'light' ? 'text-blue-primary' : 'text-footer-title'}
+                    `
                     }
                 >
                     {label}
