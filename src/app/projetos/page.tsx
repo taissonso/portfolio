@@ -1,5 +1,6 @@
 import { fetchGitHubRepos, fetchRepoLanguages } from '@/services/github/github';
 import ProjectsList from '@/components/projects/ProjectsList';
+import HeroProjects from '@/components/heros/projects';
 
 export default async function ProjetosPage() {
     const repos = await fetchGitHubRepos('taissonso');
@@ -11,5 +12,10 @@ export default async function ProjetosPage() {
         }))
     );
 
-    return <ProjectsList initialProjects={reposWithLanguages} />;
+    return (
+        <>
+            <HeroProjects />
+            <ProjectsList initialProjects={reposWithLanguages} />
+        </>
+    );
 }

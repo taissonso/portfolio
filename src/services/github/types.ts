@@ -2,6 +2,7 @@ export interface GitHubRepo {
     id: number;
     name: string;
     description: string;
+    homepage?: string;
     html_url: string;
     languages_url: string;
     typeLanguages?: GitHubLanguage[];
