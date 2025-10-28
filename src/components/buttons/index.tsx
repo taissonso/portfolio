@@ -1,19 +1,24 @@
 
 import Link from 'next/link';
+import { getButtonVariants } from '../../../utils/buttonVariants';
 import { ButtonsProps } from './types';
 
-const Buttons = ({ href, className, label, theme }: ButtonsProps) => {
+const ButtonIcon = ({ href, className, label, theme, icon, variant = 'default' }: ButtonsProps) => {
+
     return (
         <Link
             href={href}
-            className={`group ${theme === 'dark' ? 'text-dark-primary bg-light-primary' : 'text-light-primary bg-[#1E88E5]'} font-lato text-[18px]/[26px] p-3 px-6 rounded-[6px] relative inline-block font-semibold z-1 ${className}`}
+            className={`group font-lato text-[16px]/[24px] py-3 px-6 rounded-[16px] relative inline-block font-semibold z-1 ${getButtonVariants(variant, theme)} ${className}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${label} (abre em nova aba)`}
         >
             <span className="relative inline-block">
                 {label}
-                <span className="absolute h-[1px] left-1/2 bottom-0 w-0 group-hover:w-full bg-current transition-all duration-300 transform -translate-x-1/2"></span>
+                <span className="absolute h-[1px] left-0 bottom-0 w-0 group-hover:w-full bg-current transition-all duration-300 transform "></span>
             </span>
         </Link>
     );
-}
+};
 
-export default Buttons;
+export default ButtonIcon;

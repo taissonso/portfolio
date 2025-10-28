@@ -11,11 +11,10 @@
     --color-dark-gray: #3a3a3a;
     --text: #e5e5e5;
 
-
-    --color-blue-primary: #0056B3;
+    --color-blue-primary: #0056b3;
     --color-blue-gray-dark: #5a6d7a;
 
-
+    /* Skeleton */
     --color-skeleton: #98987c;
     --color-skeleton-component: #c2c2a6;
     --color-skeleton-highlight: #6b6b54;
@@ -28,9 +27,26 @@
     /* Social Icons */
     --color-linkedin: #0a66c2;
     --color-github: #3c3c3c;
+
+    /* Cards Projects */
+    --color-card-project-light: #e3e7ec;
+    --color-card-project-dark: #2a3645;
+    --color-card-text-light: #111827;
+    --color-card-text-dark: #f9fafb;
+
+    /* Buttons Projects */
+    --color-btn-git-light: #24292e;
+    --color-btn-git-light-hover: #c9d1d9;
+    --color-btn-git-dark: #c9d1d9;
+    --color-btn-git-dark-hover: #0d1117;
+
+    --color-btn-project-light: #2563eb;
+    --color-btn-project-light-hover: #1d4ed8;
+    --color-btn-project-dark: #60a5fa;
+    --color-btn-project-dark-hover: #3b82f6;
 }
 
-.linkedin{
+.linkedin {
     background-color: var(--color-linkedin);
 }
 
@@ -45,7 +61,7 @@
         #fdf497 5%,
         #fd5949 45%,
         #d6249f 60%,
-        #285AEB 90%
+        #285aeb 90%
     );
 }
 

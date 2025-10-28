@@ -1,4 +1,5 @@
 import { SVGProps } from "react";
+import { ButtonVariant } from "../../../utils/buttonVariants";
 
 export interface ButtonsProps {
     href: string;
@@ -7,5 +8,6 @@ export interface ButtonsProps {
     children?: React.ReactNode;
     icon?: React.FC<SVGProps<SVGSVGElement>>;
     label?: string;
-    theme?: "light" | "dark";
+    theme: "light" | "dark";
+    variant?: ButtonVariant;
 }
