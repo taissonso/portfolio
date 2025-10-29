@@ -2,17 +2,29 @@
 import Link from 'next/link';
 import { getButtonVariants } from '../../../utils/buttonVariants';
 import { ButtonsProps } from './types';
+import GitHubIcon from '../Icons/GitHub';
+import BugIcon from '../Icons/Bug';
 
 const ButtonIcon = ({ href, className, label, theme, icon, variant = 'default' }: ButtonsProps) => {
 
+    const getDefaultIcon = () => {
+        if (variant === 'github') return GitHubIcon;
+        if (variant === 'project') return BugIcon;
+        return null;
+    };
+
+    const IconComponent = icon || getDefaultIcon();
     return (
         <Link
             href={href}
-            className={`group font-lato text-[16px]/[24px] py-3 px-6 rounded-[16px] relative inline-block font-semibold z-1 ${getButtonVariants(variant, theme)} ${className}`}
+            className={`group flex gap-0 font-lato text-[16px]/[24px] py-3 px-6 rounded-[16px] relative font-semibold z-1 ${getButtonVariants(variant, theme)} ${className}`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${label} (abre em nova aba)`}
         >
+            <div className="w-0 h-6 relative group-hover:w-6 group-hover:mr-3 transition-all duration-700 ease-in-out">
+                {IconComponent && <IconComponent width={24} height={24} className='opacity-0 group-hover:opacity-100' />}
+            </div>
             <span className="relative inline-block">
                 {label}
                 <span className="absolute h-[1px] left-0 bottom-0 w-0 group-hover:w-full bg-current transition-all duration-300 transform "></span>

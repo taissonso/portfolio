@@ -6,6 +6,7 @@ import ButtonIcon from "../buttons";
 import { useTheme } from "@/contexts/ThemeContext";
 import Typography from "../typography";
 import Image from "next/image";
+import GitHubIcon from "../Icons/GitHub";
 
 export default function ProjectsList({ initialProjects = [] }: ProjectsListProps) {
     const { theme } = useTheme();
@@ -35,7 +36,7 @@ export default function ProjectsList({ initialProjects = [] }: ProjectsListProps
                                     </div>
                                 </div>
                                 <div className={`px-6 py-3 flex gap-8 border-0 border-solid rounded-b-2xl ${theme === 'dark' ? 'border-card-project-light' : 'border-gray-400'}`}>
-                                    <ButtonIcon href={repo.html_url} label="GitHub" theme={theme} variant="github" />
+                                    <ButtonIcon href={repo.html_url} label="GitHub" theme={theme} variant="github" icon={GitHubIcon} />
                                     {repo.homepage && <ButtonIcon href={repo.homepage} label="Ver projeto" theme={theme} variant="project" />}
                                 </div>
                             </div>

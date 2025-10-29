@@ -6,8 +6,9 @@ export interface ButtonsProps {
     onClick?: () => void;
     className?: string;
     children?: React.ReactNode;
-    icon?: React.FC<SVGProps<SVGSVGElement>>;
+    icon?: React.ComponentType<any>;
     label?: string;
     theme: "light" | "dark";
     variant?: ButtonVariant;
+    showDefaultIcon?: boolean;
 }

@@ -36,9 +36,9 @@
 
     /* Buttons Projects */
     --color-btn-git-light: #24292e;
-    --color-btn-git-light-hover: #c9d1d9;
+    --color-btn-git-light-hover: #000000;
     --color-btn-git-dark: #c9d1d9;
-    --color-btn-git-dark-hover: #0d1117;
+    --color-btn-git-dark-hover: #000000;
 
     --color-btn-project-light: #2563eb;
     --color-btn-project-light-hover: #1d4ed8;
