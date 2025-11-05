@@ -13,4 +13,8 @@ export const projectsConfig: Record<string, ProjectConfig> = {
         displayName: "Filtro de carros",
         imageUrl: "/portfolio/images/projects/filter-car.png",
     },
+    clock: {
+        displayName: "Tipos de relógios",
+        imageUrl: "/portfolio/images/projects/img-clock-project.png",
+    },
 };

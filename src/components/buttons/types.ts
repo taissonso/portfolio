@@ -1,4 +1,3 @@
-import { SVGProps } from "react";
 import { ButtonVariant } from "../../../utils/buttonVariants";
 
 export interface ButtonsProps {

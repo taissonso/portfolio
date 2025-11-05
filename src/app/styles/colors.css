@@ -5,6 +5,7 @@
     --color-light-primary: #f0f0e8;
     --color-light-gray: #cecece;
     --color-offwhite: #f2f2f2;
+    --color-light-text-primary: #111827;
 
     /* dark mode */
     --color-dark-primary: #121a25;
@@ -36,9 +37,9 @@
 
     /* Buttons Projects */
     --color-btn-git-light: #24292e;
-    --color-btn-git-light-hover: #000000;
+    --color-btn-git-light-hover: #2f363d;
     --color-btn-git-dark: #c9d1d9;
-    --color-btn-git-dark-hover: #000000;
+    --color-btn-git-dark-hover: #b1bac4;
 
     --color-btn-project-light: #2563eb;
     --color-btn-project-light-hover: #1d4ed8;
@@ -116,7 +117,7 @@ body.dark {
 
 .light {
     background-color: var(--color-light-primary);
-    color: var(--color-primary-dark);
+    color: var(--color-light-text-primary);
     @variant dark {
         background-color: var(--color-primary-dark);
         color: var(--color-light-primary);
