@@ -41,4 +41,12 @@ export const projectsConfig: Record<string, ProjectConfig> = {
         displayName: "Referências para HTML5",
         imageUrl: "/portfolio/images/projects/img-html-references.png",
     },
+    logotipoHTML5: {
+        displayName: "Logotipo HTML5",
+        imageUrl: "/portfolio/images/projects/img-html-logo.png",
+    },
+    "market-list": {
+        displayName: "Lista de compras",
+        imageUrl: "/portfolio/images/projects/img-marketlist.png",
+    },
 };
