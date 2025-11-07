@@ -17,4 +17,28 @@ export const projectsConfig: Record<string, ProjectConfig> = {
         displayName: "Tipos de relógios",
         imageUrl: "/portfolio/images/projects/img-clock-project.png",
     },
+    tabuada: {
+        displayName: "Tabuada",
+        imageUrl: "/portfolio/images/projects/img-tabuada.png",
+    },
+    crudCsharp: {
+        displayName: "CRUD em C#",
+        imageUrl: "/portfolio/images/projects/img-crud-csharp.png",
+    },
+    "desafio-frontend-jr-vnda": {
+        displayName: "Desafio Frontend I",
+        imageUrl: "/portfolio/images/projects/img-test-front-i.png",
+    },
+    "dz-front-end": {
+        displayName: "Desafio Frontend II",
+        imageUrl: "/portfolio/images/projects/img-test-front-ii.png",
+    },
+    "hash-game": {
+        displayName: "Jogo da velha",
+        imageUrl: "/portfolio/images/projects/img-jogo-da-velha.png",
+    },
+    html5references: {
+        displayName: "Referências para HTML5",
+        imageUrl: "/portfolio/images/projects/img-html-references.png",
+    },
 };

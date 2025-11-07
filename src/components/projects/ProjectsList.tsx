@@ -22,7 +22,7 @@ export default function ProjectsList({ initialProjects = [] }: ProjectsListProps
                                     src={repo.imageUrl || ''}
                                     alt={repo.displayName || ''}
                                     width={600}
-                                    height={400}
+                                    height={200}
                                     quality={100}
                                     priority
                                     className="w-full h-full object-cover object-center "
@@ -30,14 +30,14 @@ export default function ProjectsList({ initialProjects = [] }: ProjectsListProps
                             </div>
 
                             <div className={`flex-1 gap-0 border border-solid rounded-b-2xl flex flex-col justify-between ${theme === 'dark' ? 'border-card-project-light' : 'border-gray-400'}`}>
-                                <div className="flex flex-col gap-2 p-6">
+                                <div className="flex flex-col gap-2 p-8">
                                     <Typography variant="h5" className={`${theme === 'dark' ? 'text-card-text-dark' : 'text-card-text-light'} font-semibold`}>{repo.displayName}</Typography>
                                     <Typography variant="p" titleFontSize="p-medium" className={`${theme === 'dark' ? 'text-card-text-dark' : 'text-card-text-light'}`}>{repo.description}</Typography>
                                     <div className="flex gap-3 items-end justify-start mb-4 mt-2">
                                         {repo.languages ? getLanguageIcons(repo.languages) : <span>Sem linguagens</span>}
                                     </div>
                                 </div>
-                                <div className={`px-6 pb-6 flex gap-8 border-0 border-solid rounded-b-2xl ${theme === 'dark' ? 'border-card-project-light' : 'border-gray-400'}`}>
+                                <div className={`px-7 pb-8 flex gap-8 border-0 border-solid rounded-b-2xl ${theme === 'dark' ? 'border-card-project-light' : 'border-gray-400'}`}>
                                     <ButtonIcon href={repo.html_url} label="GitHub" theme={theme} variant="github" icon={GitHubIcon} />
                                     {repo.homepage && <ButtonIcon href={repo.homepage} label="Ver projeto" theme={theme} variant="project" />}
                                 </div>

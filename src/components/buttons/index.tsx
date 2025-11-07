@@ -5,7 +5,7 @@ import { ButtonsProps } from './types';
 import GitHubIcon from '../Icons/GitHub';
 import BugIcon from '../Icons/Bug';
 
-const ButtonIcon = ({ href, className, label, theme, icon, variant = 'default' }: ButtonsProps) => {
+const ButtonIcon = ({ href, className, label, theme, icon, external, variant = 'default' }: ButtonsProps) => {
 
     const getDefaultIcon = () => {
         if (variant === 'github') return GitHubIcon;
@@ -18,9 +18,9 @@ const ButtonIcon = ({ href, className, label, theme, icon, variant = 'default' }
         <Link
             href={href}
             className={`group flex gap-0 font-lato text-[16px]/[24px] py-3 px-6 rounded-[16px] relative font-semibold z-1 ${getButtonVariants(variant, theme)} ${className}`}
-            target="_blank"
+            target={!external ? "_blank" : undefined}
             rel="noopener noreferrer"
-            aria-label={`${label} (abre em nova aba)`}
+            aria-label={!external ? `${label} (abre em nova aba)` : `${label}`}
         >
             {IconComponent && (
                 <div className="w-0 h-6 relative -left-6 group-hover:w-6 group-hover:mr-3 group-hover:left-0 transition-all duration-700 ease-in-out">

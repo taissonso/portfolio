@@ -20,7 +20,7 @@ export default async function ProjetosPage() {
         'market-list': 'Lista de compras',
         'multiple-filters': 'Múltiplos filtros',
         'productionRegistration': 'Cadastro de produção',
-        'tabuada': 'Tabuada interativa',
+        'tabuada': 'Tabuada',
     };
 
     const filteredRepos = repos.filter(repo => !excludedProjects.includes(repo.name));

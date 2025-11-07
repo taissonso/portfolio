@@ -10,4 +10,5 @@ export interface ButtonsProps {
     theme: "light" | "dark";
     variant?: ButtonVariant;
     showDefaultIcon?: boolean;
+    external?: boolean;
 }
