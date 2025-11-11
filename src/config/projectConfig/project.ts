@@ -49,4 +49,12 @@ export const projectsConfig: Record<string, ProjectConfig> = {
         displayName: "Lista de compras",
         imageUrl: "/portfolio/images/projects/img-marketlist.png",
     },
+    "multiple-filters": {
+        displayName: "Múltiplos filtros",
+        imageUrl: "/portfolio/images/projects/img-multiple-filter.png",
+    },
+    productionRegistration: {
+        displayName: "Validação de formulário",
+        imageUrl: "/portfolio/images/projects/img-product-registration.png",
+    },
 };

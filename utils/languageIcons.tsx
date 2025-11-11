@@ -28,7 +28,7 @@ const languageIconMap = {
 };
 
 export const getLanguageIcons = (languages: Record<string, number>) => {
-    console.log('Linguagens da API:', Object.keys(languages));
+
     const sortedLanguages = Object.keys(languages).sort((a, b) => {
         const priorityA = languagePriority.indexOf(a);
         const priorityB = languagePriority.indexOf(b);

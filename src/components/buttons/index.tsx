@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { getButtonVariants } from '../../../utils/buttonVariants';
 import { ButtonsProps } from './types';
 import GitHubIcon from '../Icons/GitHub';
-import BugIcon from '../Icons/Bug';
+import EyesIcon from '../Icons/EyesIcon';
 
 const ButtonIcon = ({ href, className, label, theme, icon, external, variant = 'default' }: ButtonsProps) => {
 
     const getDefaultIcon = () => {
         if (variant === 'github') return GitHubIcon;
-        if (variant === 'project') return BugIcon;
+        if (variant === 'project') return EyesIcon;
         return null;
     };
 

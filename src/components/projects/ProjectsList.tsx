@@ -12,20 +12,20 @@ export default function ProjectsList({ initialProjects = [] }: ProjectsListProps
     const { theme } = useTheme();
     return (
         <section className="h-auto w-full py-14 lg:py-28">
-            <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-16">
 
                 {initialProjects.map(repo => (
-                    <div key={repo.id} className={`p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 ${theme === 'dark' ? 'bg-card-project-dark ' : 'bg-card-project-light'}`}>
+                    <div key={repo.id} className={`w-full max-w-[420px] mx-auto lg:mx-0 lg:odd:ml-auto lg:even:mx-0 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 ${theme === 'dark' ? 'bg-card-project-dark ' : 'bg-card-project-light'}`}>
                         <div className={`h-full flex flex-col rounded-2xl shadow-lg`}>
                             <div className={`img-container w-full h-[250px] rounded-t-2xl border border-solid border-b-0 overflow-hidden ${theme === 'dark' ? 'border-card-project-light bg-card-project-light' : 'border-gray-400 bg-card-project-dark'}`}>
                                 <Image
                                     src={repo.imageUrl || ''}
                                     alt={repo.displayName || ''}
                                     width={600}
-                                    height={200}
+                                    height={250}
                                     quality={100}
                                     priority
-                                    className="w-full h-full object-cover object-center "
+                                    className="w-full h-full object-cover object-center"
                                 />
                             </div>
 
@@ -37,7 +37,7 @@ export default function ProjectsList({ initialProjects = [] }: ProjectsListProps
                                         {repo.languages ? getLanguageIcons(repo.languages) : <span>Sem linguagens</span>}
                                     </div>
                                 </div>
-                                <div className={`px-7 pb-8 flex gap-8 border-0 border-solid rounded-b-2xl ${theme === 'dark' ? 'border-card-project-light' : 'border-gray-400'}`}>
+                                <div className={`px-7 pb-8 flex flex-wrap gap-4 lg:flex-nowrap lg:gap-8 border-0 border-solid rounded-b-2xl ${theme === 'dark' ? 'border-card-project-light' : 'border-gray-400'}`}>
                                     <ButtonIcon href={repo.html_url} label="GitHub" theme={theme} variant="github" icon={GitHubIcon} />
                                     {repo.homepage && <ButtonIcon href={repo.homepage} label="Ver projeto" theme={theme} variant="project" />}
                                 </div>
