@@ -12,3 +12,13 @@ export interface ButtonsProps {
     showDefaultIcon?: boolean;
     external?: boolean;
 }
+
+export interface ButtonActionProps {
+    onClick: () => void;
+    className?: string;
+    label: string;
+    theme: "light" | "dark";
+    icon?: React.ComponentType<any>;
+    variant?: ButtonVariant;
+    state?: boolean;
+}

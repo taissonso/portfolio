@@ -7,45 +7,118 @@ import { useTheme } from "@/contexts/ThemeContext";
 import Typography from "../typography";
 import Image from "next/image";
 import GitHubIcon from "../Icons/GitHub";
+import { useState, useRef, useEffect } from "react";
+import ButtonAction from "../buttons/ButtonAction";
+import ArrowIcon from "../Icons/ArrowIcon";
 
 export default function ProjectsList({ initialProjects = [] }: ProjectsListProps) {
     const { theme } = useTheme();
+    const [visibleProjects, setVisibleProjects] = useState(4);
+    const [showAll, setShowAll] = useState(false);
+    const [animatedProjects, setAnimatedProjects] = useState<Set<number>>(new Set());
+    const sectionRef = useRef<HTMLElement>(null);
+    const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    const handleToggleProjects = () => {
+        if (showAll) {
+            setVisibleProjects(4);
+            setShowAll(false);
+            sectionRef.current?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            setAnimatedProjects(new Set());
+        } else {
+            const newVisible = visibleProjects + 4;
+            setVisibleProjects(newVisible);
+            if (newVisible >= initialProjects.length) {
+                setShowAll(true);
+            }
+        }
+    };
+
+    const displayedProjects = initialProjects.slice(0, visibleProjects);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const projectIndex = parseInt(entry.target.getAttribute('data-project-index') || '0');
+                        setAnimatedProjects(prev => new Set(prev).add(projectIndex));
+                    }
+                });
+            },
+            { threshold: 0.1, rootMargin: '50px' }
+        );
+
+        projectRefs.current.forEach((ref) => {
+            if (ref) observer.observe(ref);
+        });
+
+        return () => observer.disconnect();
+    }, [displayedProjects]);
     return (
-        <section className="h-auto w-full py-14 lg:py-28">
-            <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-16">
+        <section ref={sectionRef} className="h-auto w-full py-14 lg:py-28">
+            <div className="container grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-16">
 
-                {initialProjects.map(repo => (
-                    <div key={repo.id} className={`w-full max-w-[420px] mx-auto lg:mx-0 lg:odd:ml-auto lg:even:mx-0 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 ${theme === 'dark' ? 'bg-card-project-dark ' : 'bg-card-project-light'}`}>
-                        <div className={`h-full flex flex-col rounded-2xl shadow-lg`}>
-                            <div className={`img-container w-full h-[250px] rounded-t-2xl border border-solid border-b-0 overflow-hidden ${theme === 'dark' ? 'border-card-project-light bg-card-project-light' : 'border-gray-400 bg-card-project-dark'}`}>
-                                <Image
-                                    src={repo.imageUrl || ''}
-                                    alt={repo.displayName || ''}
-                                    width={600}
-                                    height={250}
-                                    quality={100}
-                                    priority
-                                    className="w-full h-full object-cover object-center"
-                                />
-                            </div>
+                {displayedProjects.map((repo, index) => {
+                    const isOdd = index % 2 === 0;
+                    const isVisible = animatedProjects.has(index);
 
-                            <div className={`flex-1 gap-0 border border-solid rounded-b-2xl flex flex-col justify-between ${theme === 'dark' ? 'border-card-project-light' : 'border-gray-400'}`}>
-                                <div className="flex flex-col gap-2 p-8">
-                                    <Typography variant="h5" className={`${theme === 'dark' ? 'text-card-text-dark' : 'text-card-text-light'} font-semibold`}>{repo.displayName}</Typography>
-                                    <Typography variant="p" titleFontSize="p-medium" className={`${theme === 'dark' ? 'text-card-text-dark' : 'text-card-text-light'}`}>{repo.description}</Typography>
-                                    <div className="flex gap-3 items-end justify-start mb-4 mt-2">
-                                        {repo.languages ? getLanguageIcons(repo.languages) : <span>Sem linguagens</span>}
-                                    </div>
+                    return (
+                        <div
+                            key={repo.id}
+                            ref={el => { projectRefs.current[index] = el; }}
+                            data-project-index={index}
+                            className={`w-full max-w-[420px] mx-auto lg:mx-0 lg:odd:ml-auto lg:even:mx-0 p-0 lg:p-4 rounded-2xl transition-all duration-700 ease-out ${isVisible
+                                ? 'opacity-100 translate-x-0'
+                                : `opacity-0 ${isOdd ? '-translate-x-full' : 'translate-x-full'}`
+                                } ${theme === 'dark' ? 'bg-card-project-dark shadow-2xl shadow-black/80 hover:shadow-card-project-light/10' : 'bg-card-project-light shadow-lg hover:shadow-xl'}`}>
+                            <div className={`h-full flex flex-col rounded-2xl`}>
+                                <div className={`img-container w-full h-[250px] rounded-t-2xl border border-solid border-b-0 overflow-hidden ${theme === 'dark' ? 'border-card-project-light bg-card-project-light' : 'border-gray-400 bg-card-project-dark'}`}>
+                                    <Image
+                                        src={repo.imageUrl || ''}
+                                        alt={repo.displayName || ''}
+                                        width={600}
+                                        height={250}
+                                        quality={100}
+                                        priority
+                                        className="w-full h-full object-cover object-center"
+                                    />
                                 </div>
-                                <div className={`px-7 pb-8 flex flex-wrap gap-4 lg:flex-nowrap lg:gap-8 border-0 border-solid rounded-b-2xl ${theme === 'dark' ? 'border-card-project-light' : 'border-gray-400'}`}>
-                                    <ButtonIcon href={repo.html_url} label="GitHub" theme={theme} variant="github" icon={GitHubIcon} />
-                                    {repo.homepage && <ButtonIcon href={repo.homepage} label="Ver projeto" theme={theme} variant="project" />}
+
+                                <div className={`flex-1 gap-0 border border-solid rounded-b-2xl flex flex-col justify-between ${theme === 'dark' ? 'border-card-project-light' : 'border-gray-400'}`}>
+                                    <div className="flex flex-col gap-2 p-4 lg:p-8 ">
+                                        <Typography variant="h5" className={`${theme === 'dark' ? 'text-card-text-dark' : 'text-card-text-light'} font-semibold`}>{repo.displayName}</Typography>
+                                        <Typography variant="p" titleFontSize="p-medium" className={`${theme === 'dark' ? 'text-card-text-dark' : 'text-card-text-light'}`}>{repo.description}</Typography>
+                                        <div className="flex gap-3 items-end justify-start mb-4 mt-2">
+                                            {repo.languages ? getLanguageIcons(repo.languages) : <span>Sem linguagens</span>}
+                                        </div>
+                                    </div>
+                                    <div className={`px-4 pb-4 lg:pb-8 flex flex-wrap gap-4 lg:flex-nowrap lg:gap-8 border-0 border-solid rounded-b-2xl ${theme === 'dark' ? 'border-card-project-light' : 'border-gray-400'}`}>
+                                        <ButtonIcon href={repo.html_url} label="Github" theme={theme} variant="github" icon={GitHubIcon} />
+                                        {repo.homepage && <ButtonIcon href={repo.homepage} label="Ver projeto" theme={theme} variant="project" />}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
+
+            {initialProjects.length > 4 && (
+                <div className="flex justify-center mt-12">
+                    <ButtonAction
+                        onClick={handleToggleProjects}
+                        label={showAll ? 'Ver menos' : 'Ver mais'}
+                        theme={theme}
+                        variant="default"
+                        icon={ArrowIcon}
+                        state={showAll}
+                    />
+                </div>
+            )}
         </section>
     );
 }
