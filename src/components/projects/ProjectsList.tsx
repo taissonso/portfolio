@@ -72,8 +72,8 @@ export default function ProjectsList({ initialProjects = [] }: ProjectsListProps
                             ref={el => { projectRefs.current[index] = el; }}
                             data-project-index={index}
                             className={`w-full max-w-[420px] mx-auto lg:mx-0 lg:odd:ml-auto lg:even:mx-0 p-0 lg:p-4 rounded-2xl transition-all duration-700 ease-out ${isVisible
-                                ? 'opacity-100 translate-x-0'
-                                : `opacity-0 ${isOdd ? '-translate-x-full' : 'translate-x-full'}`
+                                ? 'opacity-100 translate-x-0 translate-y-0'
+                                : `opacity-0 ${isOdd ? '-translate-y-8 lg:-translate-x-full' : 'translate-y-8 lg:translate-x-full'}`
                                 } ${theme === 'dark' ? 'bg-card-project-dark shadow-2xl shadow-black/80 hover:shadow-card-project-light/10' : 'bg-card-project-light shadow-lg hover:shadow-xl'}`}>
                             <div className={`h-full flex flex-col rounded-2xl`}>
                                 <div className={`img-container w-full h-[250px] rounded-t-2xl border border-solid border-b-0 overflow-hidden ${theme === 'dark' ? 'border-card-project-light bg-card-project-light' : 'border-gray-400 bg-card-project-dark'}`}>
