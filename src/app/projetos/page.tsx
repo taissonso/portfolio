@@ -1,21 +1,27 @@
+import { fetchGitHubRepos, fetchRepoLanguages } from '@/services/github/github';
+import ProjectsList from '@/components/projects/ProjectsList';
+import HeroProjects from '@/components/heros/projects';
+import { projectsConfig } from '@/config/projectConfig/project';
 
-'use client';
+export default async function ProjetosPage() {
+    const repos = await fetchGitHubRepos('taissonso');
+    const excludedProjects = ['taissonso', 'portfolio'];
 
-import { FC } from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
-import Logo from '@/components/logo';
-import Typography from '@/components/typography';
-const Projetos: FC = () => {
+    const filteredRepos = repos.filter(repo => !excludedProjects.includes(repo.name));
 
-    const { theme } = useTheme();
+    const reposWithLanguages = await Promise.all(
+        filteredRepos.map(async (repo) => ({
+            ...repo,
+            displayName: projectsConfig[repo.name]?.displayName || repo.name,
+            imageUrl: projectsConfig[repo.name]?.imageUrl || '/images/projects/default.jpg',
+            languages: repo.languages_url ? await fetchRepoLanguages(repo.languages_url) : {}
+        }))
+    );
 
     return (
-        <section className="h-[100vh] flex flex-col gap-6 items-center justify-center w-full ">
-            <div className='flex flex-col items-center justify-center gap-8 p-6 '>
-                <Logo width={300} height={300} theme={theme} isMobile={false} />
-                <Typography variant="h1" titleFontSize='h1-mobile'>Em breve</Typography>
-            </div>
-        </section>);
-};
-
-export default Projetos;
+        <>
+            <HeroProjects />
+            <ProjectsList initialProjects={reposWithLanguages} />
+        </>
+    );
+}

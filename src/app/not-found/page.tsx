@@ -13,7 +13,7 @@ export default function NotFoundPage() {
         <section className="h-[calc(100vh+80px)] flex flex-col gap-6 items-center justify-center w-full overflow-hidden relative">
             <div className='flex flex-col items-center justify-center gap-4 p-6 '>
                 <h1 className="font-machine text-[36px] leading-[48px] lg:text-[56px] lg:leading-[54px] text-center uppercase">Página não encontrada</h1>
-                <Buttons href="/" label="Página inicial" theme={theme} />
+                <Buttons href="/" label="Página inicial" theme={theme} external={true} />
                 <div className='w-full max-w-[360px] h-auto md:max-w-[360px] lg:max-w-[556px] lg:h-[400px] relative z-1'>
                     <Image
                         src="/portfolio/images/lupa.png"

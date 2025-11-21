@@ -36,7 +36,7 @@ const HeroHome = () => {
                 </div>
                 <Typography
                     variant="h1" titleFontSize="h1-mobile"
-                    className="relative h-auto text-balance word-break w-full 2xl:w-[60vw] text-center lg:text-left"
+                    className="relative h-auto text-balance word-break w-full 2xl:w-[60vw] text-center lg:text-left "
                 >
                     <span className="title-home relative small-device-text w-full">
                         {displayedText}
