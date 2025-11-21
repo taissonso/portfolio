@@ -23,7 +23,7 @@ const ButtonIcon = ({ href, className, label, theme, icon, external, variant = '
             aria-label={!external ? `${label} (abre em nova aba)` : `${label}`}
         >
             {IconComponent && (
-                <div className="w-5 lg:w-0 h-6 relative left-0 mr-3 lg:-left-6 lg:group-hover:w-6 lg:group-hover:mr-3 group-hover:left-0 transition-all duration-700 ease-in-out">
+                <div className="w-5 lg:w-0 h-6 relative left-0 mr-3 lg:mr-0 lg:-left-6 lg:group-hover:w-6 lg:group-hover:mr-3 group-hover:left-0 transition-all duration-700 ease-in-out">
                     {IconComponent && <IconComponent width={24} height={24} className='opacity-100 lg:opacity-0 group-hover:opacity-100' />}
                 </div>
             )}

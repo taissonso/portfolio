@@ -113,7 +113,7 @@ export default function ProjectsList({ initialProjects = [] }: ProjectsListProps
                         onClick={handleToggleProjects}
                         label={showAll ? 'Ver menos' : 'Ver mais'}
                         theme={theme}
-                        variant="default"
+                        variant="moreless"
                         icon={ArrowIcon}
                         state={showAll}
                     />
