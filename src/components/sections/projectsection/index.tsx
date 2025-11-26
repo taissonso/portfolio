@@ -2,6 +2,7 @@ import ButtonIcon from "@/components/buttons";
 import BugIcon from "@/components/Icons/Bug";
 import CSharpIcon from "@/components/Icons/CSharpIcon";
 import CssIcon from "@/components/Icons/CssIcon";
+import EyesIcon from "@/components/Icons/EyesIcon";
 import GitHubIcon from "@/components/Icons/GitHub";
 import HtmlIcon from "@/components/Icons/HTML5Icon";
 import JavaScriptIcon from "@/components/Icons/JavascriptIcon";
@@ -118,12 +119,13 @@ const ProjectSection = () => {
     }, []);
 
     return (
-        <section className="py-16 lg:py-28 relative overflow-hidden">
-            <a href="https://github.com/taissonso" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em nova aba)" className="w-36 h-36 bg-black -top-[80px] -left-[90px] absolute rotate-[134deg]">
-                <GitHubIcon className="w-9 h-9 absolute text-white top-[0%] left-[34%] rotate-180" />
+        <section className="py-24 lg:py-28 relative overflow-hidden">
+            <a href="https://github.com/taissonso" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em nova aba)" className="w-36 h-36 bg-github -top-[80px] -right-[90px] lg:-left-[90px] absolute rotate-[134deg] group">
+                <GitHubIcon className="w-9 h-9 absolute text-white top-[60px] -right-[2px] lg:-top-[3px] lg:left-[34%] -rotate-90 lg:rotate-180" />
+                <span className="absolute h-max -rotate-[134deg] top-[0px] left-[55px] translate-x-[-50%] text-white rounded-[5px] github px-3 py-2 invisible group-hover:visible transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:-top-[70px]">GitHub</span>
             </a>
-            <div className="container w-full flex flex-col gap-6 md:gap-16 md:flex-row items-center justify-between">
-                <div className="w-full h-max md:w-1/2 flex items-start justify-between p-6 gap-6 ">
+            <div className="container w-full flex flex-col-reverse gap-16 lg:flex-row items-center justify-between">
+                <div className="w-full h-max lg:w-[40%] xl:w-[50%] flex flex-wrap items-start justify-center gap-6 ">
                     {iconOrder.map(({ id, Icon }, index) => {
                         const isActive = activeIndices.includes(index);
                         const animationClass = !isActive
@@ -140,14 +142,23 @@ const ProjectSection = () => {
                         );
                     })}
                 </div>
-                <div className="w-full md:w-1/2 h-auto flex flex-col gap-6">
-                    <Typography variant="h2" className="!font-machine">./Projetos</Typography>
-                    <Typography variant="p" titleFontSize="p-large" className="font-light">
-                        Aqui vamos colocar um texto descritivo sobre
-                        os projetos desenvolvidos e como eles acabam me ajudar em minha jogarnada me orgulhando de cada um deles.
-                        Acredito que podemos aumentar ainda um pouco o texto futuramente.
-                    </Typography>
-                    <ButtonIcon href="/projetos" label="Projetos" theme={theme} variant="project" icon={BugIcon} />
+                <div className="w-full lg:w-[60%] xl:w-[50%] h-auto flex flex-col gap-6">
+                    <div className="flex flex-col gap-4">
+                        <Typography variant="h2" className="!font-machine text-balance word-break small-device-text">./Projetos</Typography>
+                        <Typography variant="p" titleFontSize="p-large">
+                            Em uma conversa um dia com amigos da área de desenvolvimento entramos no assunto sobre o que mostrar ou não no portifólio ou no GitHub.
+                            Alguns defendiam que apenas os projetos mais complexos e visualmente atraentes deveriam aparecer. Outros acreditavam que todo projeto
+                            independentemente de beleza ou complexidade, merece ser mostrado.
+                        </Typography>
+
+                        <Typography variant="p" titleFontSize="p-large">
+                            Eu, pessoalmente, penso que cada projeto faz parte da trajetória como desenvolvedores. Eles registram nossa evolução, nossas dificuldades,
+                            nossos pontos fortes e fracos e acima de tudo, contam nossa história da qual devemos se orgulhar.  E isso, para mim, já é motivo suficiente para mantelos e compartilha-los aqui.
+                        </Typography>
+                    </div>
+
+
+                    <ButtonIcon href="/projetos" label="Meus projetos" theme={theme} variant="project" icon={EyesIcon} />
                 </div>
             </div>
         </section>
