@@ -28,10 +28,71 @@ a,
 }
 
 @keyframes blink {
-    0%, 100% {
+    0%,
+    100% {
         opacity: 1;
     }
     50% {
         opacity: 0;
+    }
+}
+
+@layer utilities {
+    .animate-fall-out {
+        animation: fall-out 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    .animate-rise-in {
+        animation: rise-in 0.65s ease-out forwards;
+    }
+
+    .shadow-bottom {
+        filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.35));
+    }
+
+    .dark .shadow-bottom {
+        filter: drop-shadow(0 8px 14px rgba(255, 255, 255, 0.35));
+    }
+}
+
+@keyframes fall-out {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(3rem);
+        opacity: 1;
+    }
+    85% {
+        transform: translateY(2.2rem);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(3rem);
+        opacity: 0;
+    }
+}
+
+@keyframes rise-in {
+    0% {
+        transform: translateY(-3rem);
+        opacity: 0;
+    }
+    35% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-0.8rem);
+    }
+    65% {
+        transform: translateY(0.3rem);
+    }
+    80% {
+        transform: translateY(-0.2rem);
+    }
+    100% {
+        transform: translateY(0);
     }
 }

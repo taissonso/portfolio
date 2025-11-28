@@ -4,6 +4,7 @@ import { getButtonVariants } from '../../../utils/buttonVariants';
 import { ButtonsProps } from './types';
 import GitHubIcon from '../Icons/GitHub';
 import EyesIcon from '../Icons/EyesIcon';
+import BugIcon from '../Icons/Bug';
 
 const ButtonIcon = ({ href, className = '', label, theme, icon, external, variant = 'default' }: ButtonsProps) => {
 

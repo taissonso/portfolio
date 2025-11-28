@@ -10,7 +10,7 @@ const AboutMe = () => {
     return (
         <section
             className={`w-full h-auto py-16 ${theme === 'light' ? 'bg-footer-text' : 'bg-blue-gray-dark'}`}>
-            <div className="container h-full flex flex-col gap-6 md:gap-16  md:flex-row justify-between relative">
+            <div className="container h-full flex flex-col gap-6 md:gap-16 md:flex-row justify-between relative">
                 <div className="w-full md:w-1/2 h-auto flex flex-col justify-center">
                     <Typography variant="h2" className="!font-machine pb-4">Sobre.</Typography>
                     <Typography variant="p" titleFontSize="p-large" className="pb-4 font-light">Pode me chamar de <span className="italic font-normal">Oliveira</span>, sou <span className="italic font-normal">Desenvolvedor Front-end</span> com mais de 5 anos de experiência,
